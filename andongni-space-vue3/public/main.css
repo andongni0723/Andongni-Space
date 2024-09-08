@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "JetBrains Mono NL";
+    src:
+        url("../src/assets/font/JetBrainsMonoNL-SemiBold.ttf") format('truetype')
+}
+@font-face {
+    font-family: "Impact";
+    src:
+        url("../src/assets/font/Impact.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "bai jamjuree";
+    src:
+        url("../src/assets/font/BaiJamjuree-Regular.ttf") format('truetype');
+}
+
+:root {
+    --main-drak-black-color: rgb(12, 12, 13);
+    --main-light-black-color: rgb(34, 36, 37);
+    --main-white-color: rgb(222, 220, 217);
+}

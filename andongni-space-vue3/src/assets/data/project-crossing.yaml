@@ -1,0 +1,5 @@
+index: "01"
+title: Crossing
+imgSrc: "/main-view-img/crossing.jpeg"
+intro: |
+  這是我在2023年8月製作的遊戲，也是我高中自主學習計畫的作品。這是Unity2D射擊遊戲，嘗試使用Unity URP渲染管線、幾何形狀和後處理系統提升美術質感。利用數學向量解決遊戲問題。設計Boss技能、主菜單和敵人行為。使用觀察者設計模式、物件導向-繼承。加入AI語音教學，注重程式效能和玩家體驗。
