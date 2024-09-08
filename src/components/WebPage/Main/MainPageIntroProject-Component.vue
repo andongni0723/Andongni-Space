@@ -89,7 +89,7 @@ const introFormat = props.intro;
 }
 
 .line {
-  color: white;
+  color: var(--main-white-color);
   max-width: 100vw;
   margin: 100px 0 0 0;
 }

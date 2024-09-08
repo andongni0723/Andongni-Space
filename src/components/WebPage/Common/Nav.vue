@@ -6,21 +6,22 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 
 <template>
 <div class="nav">
-  <div class="logo"><Logo/></div>
-
-  <ResponsiveWatcher v-slot="{isMobile}">
-    <div v-if="isMobile" class="right-side">
+  <div class="nav-item">
+    <div class="logo"><Logo/></div>
+    <ResponsiveWatcher v-slot="{isMobile}">
+      <div v-if="isMobile" class="right-side">
         <Icon icon-src="fa-solid fa-list fa-2xl" link=""/>
-    </div>
-    <div v-else class="right-side">
-      <a class="nav-button" href="">ABOUT</a>
-      <a class="nav-button" href="">PROJECTS</a>
-      <Icon icon-src="fa-brands fa-facebook fa-2xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
-      <Icon icon-src="fa-brands fa-bilibili fa-2xl" link="https://space.bilibili.com/543329750"/>
-      <Icon icon-src="fa-brands fa-github fa-2xl"   link="https://github.com/andongni0723"/>
-    </div>
-  </ResponsiveWatcher>
-
+      </div>
+      <div v-else class="right-side">
+        <a class="nav-button" href="">ABOUT</a>
+        <a class="nav-button" href="">PROJECTS</a>
+        <Icon icon-src="fa-brands fa-facebook fa-2xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
+        <Icon icon-src="fa-brands fa-bilibili fa-2xl" link="https://space.bilibili.com/543329750"/>
+        <Icon icon-src="fa-brands fa-github fa-2xl"   link="https://github.com/andongni0723"/>
+      </div>
+    </ResponsiveWatcher>
+  </div>
+  <hr class="line">
 </div>
 </template>
 
@@ -31,14 +32,20 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
   top: 0;
   max-width: 100vw;
   height: 15vh;
-  display: flex;
   background-color: black;
-  justify-content: left;
-  align-content: center;
 
-  align-items: center;
-  //padding-left: 20px;
-  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-item {
+  //margin-top: 1vh;
+  padding: 35px 35px 0 35px;
+
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
 h1 {
@@ -66,5 +73,10 @@ h1 {
   color: white;
   outline: none;
   text-decoration: none;
+}
+
+.line {
+  color: var(--main-white-color);
+  margin: 0;
 }
 </style>
