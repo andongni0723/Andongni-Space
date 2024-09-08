@@ -1,5 +1,5 @@
 index: "02"
 title: GunShoot
-imgSrc: "/main-view-img/gunshoot.jpeg"
+imgSrc: "/main-page-img/gunshoot.jpeg"
 intro: |
   自主製作俯視射擊遊戲，克服手電筒、爆炸特效挑戰。製作DoTween動畫，槍械系統優化效能，使用MVC製作任務系統。敵人狀態機、Unity的Ray功能實現。強化粒子系統、大型程式系統製作 學習自學能力。

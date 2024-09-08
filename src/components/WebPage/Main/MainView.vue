@@ -11,7 +11,7 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
     <p><h3 class="self">正在學習遊戲開發</h3></p>
 
     <div class="show-project">
-      <img class="show-project-img" src="../../../assets/crossing-show.jpeg" alt="">
+      <img class="show-project-img" src="../../../../public/main-view-img/crossing-show.jpeg" alt="">
       <div class="project-details">
         <p><h3 class="details-title">作品</h3></p>
         <hr class="line">
@@ -30,7 +30,7 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
   min-height: 85vh;
   max-width: 100vw;
   background-repeat: no-repeat;
-  background-image: url("../../../assets/main_background.png");
+  background-image: url("../../../../public/main-view-img/main_background.png");
   background-color: #6b6562;
   background-position: 80% 100%;
   background-size: 100vw auto;

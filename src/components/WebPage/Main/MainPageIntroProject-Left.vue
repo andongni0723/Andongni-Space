@@ -22,7 +22,7 @@ const introFormat = props.intro;
 </template>
 
 <style scoped>
-.component :deep(.project){
+.component:deep(.project){
   flex-direction: row-reverse;
 }
 

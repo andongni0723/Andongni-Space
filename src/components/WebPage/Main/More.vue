@@ -46,12 +46,12 @@
 }
 
 .button-text-left {
-  font-family: "JetBrains Mono NL", serif;
+  font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
   padding-left: 10px;
 }
 
 .button-text-right{
-  font-family: "JetBrains Mono NL", serif;
+  font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
   padding-right: 10px;
 }
 

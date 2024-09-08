@@ -124,11 +124,11 @@ const introFormat = props.intro;
 
 .button-text {
   width: 40px;
-  font-family: "JetBrains Mono NL", serif;
+  font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
 }
 .text {
   color: var(--main-white-color);
-  font-family:  "bai jamjuree",sans-serif;
+  font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 28px;
