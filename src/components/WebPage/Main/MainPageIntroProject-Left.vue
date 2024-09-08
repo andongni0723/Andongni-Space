@@ -9,6 +9,7 @@ interface Props
   title: string;
   imgSrc: string;
   intro: string;
+  link: string;
 }
 
 const props = defineProps<Props>();
@@ -23,9 +24,12 @@ const introFormat = props.intro;
                  :title="title"
                  :imgSrc="imgSrc"
                  :intro="introFormat"
+                 :link="link"
                  project-style="flex-direction: row-reverse"
-                 index-style="margin-left: 0, margin-right: max(0px, calc((100% - 980px) * 0.5))"
+                 index-style="margin-right: max(0px, calc((100% - 980px) * 0.5));
+                              margin-left: 0;"
                  img-style=" float: right" />
+
 </template>
 
 <style scoped>

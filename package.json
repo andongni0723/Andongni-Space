@@ -1,6 +1,6 @@
 {
   "name": "andongni-space-vue3",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",

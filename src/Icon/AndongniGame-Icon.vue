@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <img src="../assets/logo.png" />
+  <router-link to="/"><img src="../../public/logo.png" /></router-link>
 </template>
 
 <style scoped>

@@ -7,6 +7,7 @@ interface Props
   title: string;
   imgSrc: string;
   intro: string;
+  link: string;
   projectStyle: Record<string, string>;
   indexStyle: Record<string, string>;
   imgStyle: Record<string, string>;
@@ -25,8 +26,8 @@ const introFormat = props.intro;
 <template>
   <div class="project-show">
     <div class="project" :style="projectStyle">
-      <div class="index" :style="imgStyle">
-        <h1 class="title">{{index}}</h1>
+      <div class="index" :style="indexStyle">
+        <h1 class="title" >{{index}}</h1>
       </div>
       <div class="details">
         <img class="detail-img" :src="imgSrc" :style="imgStyle" alt="project-img" >
@@ -35,10 +36,10 @@ const introFormat = props.intro;
     <div class="intro">
       <div class="name-and-button" >
         <h1 class="big-title" >{{title}}</h1>
-        <button class="go-button">
+        <a class="go-button" :href="link">
           <p class="button-text">查看</p>
           <i class="fa-thin fa-arrow-right-long"></i>
-        </button>
+        </a>
       </div>
       <div class="text">
         <p v-html="introFormat"/>
@@ -113,6 +114,7 @@ const introFormat = props.intro;
   border-radius: 30px;
   color: var(--main-white-color);
   background-color: var(--main-drak-black-color);
+  text-decoration: none;
   width: 150px;
   margin: 30px 50px;
   padding: 15px 15px;
@@ -129,6 +131,7 @@ const introFormat = props.intro;
 .go-button:hover {
   background-color: var(--main-white-color);
   color: var(--main-light-black-color);
+  text-decoration: none;
 }
 
 .button-text {

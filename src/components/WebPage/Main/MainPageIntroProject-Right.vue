@@ -9,6 +9,7 @@ interface Props
   title: string;
   imgSrc: string;
   intro: string;
+  link: string;
 }
 
 const props = defineProps<Props>();
@@ -19,5 +20,5 @@ const introFormat = props.intro;
 
 
 <template>
-  <PageComponent class="component" :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat"/>
+  <PageComponent class="component" :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"/>
 </template>

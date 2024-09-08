@@ -1,10 +1,17 @@
-<script setup>
+<script lang="ts" setup>
+import {defineProps} from 'vue';
 
+interface Props
+{
+  title: string
+}
+
+const props = defineProps<Props>();
 </script>
 
 <template>
 <div class="big-title">
-  <h1 class="title-text">PROJECTS</h1>
+  <h1 class="title-text">{{title}}</h1>
   <hr class="line">
 </div>
 </template>
@@ -15,7 +22,7 @@
 }
 
 .title-text {
-  font-family: "Impact", "JetBrains Mono NL",serif;
+  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", serif;
   font-style: italic;
   font-size: 5rem;
   color: var(--main-white-color);

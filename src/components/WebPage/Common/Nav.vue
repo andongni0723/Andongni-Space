@@ -13,7 +13,8 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
         <Icon icon-src="fa-solid fa-list fa-2xl" link=""/>
       </div>
       <div v-else class="right-side">
-        <a class="nav-button" href="">ABOUT</a>
+        <!--<a class="nav-button" href="">ABOUT</a>-->
+        <router-link to="/about" class="nav-button">ABOUT</router-link>
         <a class="nav-button" href="">PROJECTS</a>
         <Icon icon-src="fa-brands fa-facebook fa-2xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-2xl" link="https://space.bilibili.com/543329750"/>
