@@ -6,19 +6,19 @@
 <div class="more">
   <div class="text-and-button">
     <h1 class="title-text">VIEW ALL PROJECT</h1>
-    <div class="go-button">
+    <button class="go-button">
       <p class="button-text-left">所有專案</p>
       <!--<i class="fa-thin fa-arrow-right-long"></i>-->
       <i class="fa-solid fa-greater-than "></i>
-    </div>
+    </button>
       <i/>
   </div>
   <div class="text-and-button reverse">
     <h1 class="title-text">ABOUT ME</h1>
-    <div class="go-button">
+    <button class="go-button">
       <i class="fa-solid fa-less-than"></i>
       <p class="button-text-right">關於我</p>
-    </div>
+    </button>
     <i/>
   </div>
 </div>
@@ -60,7 +60,7 @@
   border-radius: 50px;
   color: var(--main-light-black-color);
   background-color: var(--main-white-color);
-  width: 180px;
+  width: 220px;
   margin: 30px 50px;
   padding: 15px 15px;
   display: flex;
@@ -78,10 +78,19 @@
   color: var(--main-white-color);
 }
 
+@media (max-width: 900px) {
+  .text-and-button {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
 @media (max-width: 600px) {
   .title-text {
     font-size: 3rem;
   }
+
 }
 
 </style>

@@ -7,7 +7,13 @@ interface Props
   title: string;
   imgSrc: string;
   intro: string;
+  projectStyle: Record<string, string>;
+  indexStyle: Record<string, string>;
+  imgStyle: Record<string, string>;
 }
+
+
+
 
 const props = defineProps<Props>();
 
@@ -18,21 +24,21 @@ const introFormat = props.intro;
 
 <template>
   <div class="project-show">
-    <div class="project">
-      <div class="index">
+    <div class="project" :style="projectStyle">
+      <div class="index" :style="imgStyle">
         <h1 class="title">{{index}}</h1>
       </div>
       <div class="details">
-        <img class="detail-img" :src="imgSrc" alt="" >
+        <img class="detail-img" :src="imgSrc" :style="imgStyle" alt="project-img" >
       </div>
     </div>
     <div class="intro">
-      <div class="name-and-button">
+      <div class="name-and-button" >
         <h1 class="big-title" >{{title}}</h1>
-        <div class="go-button">
+        <button class="go-button">
           <p class="button-text">查看</p>
           <i class="fa-thin fa-arrow-right-long"></i>
-        </div>
+        </button>
       </div>
       <div class="text">
         <p v-html="introFormat"/>
@@ -96,7 +102,9 @@ const introFormat = props.intro;
 
 .name-and-button {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 500px;
   padding: 30px 50px;
 }
 
@@ -104,13 +112,14 @@ const introFormat = props.intro;
   border: var(--main-light-black-color) solid 1px;
   border-radius: 30px;
   color: var(--main-white-color);
-  width: 100px;
+  background-color: var(--main-drak-black-color);
+  width: 150px;
   margin: 30px 50px;
   padding: 15px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   transition: 0.2s;
   font-weight: bold;
   font-size: 0.9rem;
@@ -182,9 +191,13 @@ const introFormat = props.intro;
     font-size: 3rem;
   }
 
+  .name-and-button {
+    width: 340px;
+  }
+
   .go-button {
-    //margin: 20px 0 0 0;
     margin: 0 0 0 30px;
+    width: 130px;
   }
 
   .text {

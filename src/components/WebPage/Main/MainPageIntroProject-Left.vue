@@ -18,7 +18,14 @@ const introFormat = props.intro;
 
 
 <template>
-  <PageComponent class="component" :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat"/>
+  <PageComponent class="component"
+                 :index="index"
+                 :title="title"
+                 :imgSrc="imgSrc"
+                 :intro="introFormat"
+                 project-style="flex-direction: row-reverse"
+                 index-style="margin-left: 0, margin-right: max(0px, calc((100% - 980px) * 0.5))"
+                 img-style=" float: right" />
 </template>
 
 <style scoped>
