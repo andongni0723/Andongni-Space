@@ -16,9 +16,9 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
         <!--<a class="nav-button" href="">ABOUT</a>-->
         <router-link to="/about" class="nav-button">ABOUT</router-link>
         <a class="nav-button" href="">PROJECTS</a>
-        <Icon icon-src="fa-brands fa-facebook fa-2xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
-        <Icon icon-src="fa-brands fa-bilibili fa-2xl" link="https://space.bilibili.com/543329750"/>
-        <Icon icon-src="fa-brands fa-github fa-2xl"   link="https://github.com/andongni0723"/>
+        <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
+        <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
+        <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
       </div>
     </ResponsiveWatcher>
   </div>
@@ -32,17 +32,19 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
   margin: 0;
   top: 0;
   max-width: 100vw;
-  height: 15vh;
+  //height: 15vh;
   background-color: black;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  z-index: 10;
 }
 
 .nav-item {
   //margin-top: 1vh;
-  padding: 35px 35px 0 35px;
+  padding: 1rem 80px;
 
   display: flex;
   justify-content: space-around;
@@ -68,7 +70,7 @@ h1 {
 
 .nav-button {
   font-family: "JetBrains Mono NL",serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   //margin: 0 20px 0 20px;
   color: white;
@@ -79,5 +81,11 @@ h1 {
 .line {
   color: var(--main-white-color);
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .nav-item {
+    padding: 1rem 20px;
+  }
 }
 </style>

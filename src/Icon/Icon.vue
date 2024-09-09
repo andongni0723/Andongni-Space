@@ -15,8 +15,6 @@ const props = defineProps<Props>();
 
 <style scoped>
 a::before, a:hover{
-  width: 32px;
-  height: 32px;
   justify-content: center;
   align-items: center;
 }

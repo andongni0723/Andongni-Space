@@ -54,6 +54,7 @@ const introFormat = props.intro;
 <style scoped>
 .project-show {
   background-color: var(--main-drak-black-color);
+  overflow: hidden;
 }
 
 .project{
@@ -103,6 +104,7 @@ const introFormat = props.intro;
 
 .name-and-button {
   display: flex;
+  //flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 500px;
@@ -172,7 +174,6 @@ const introFormat = props.intro;
 
   .project-show {
     padding-left: 30px;
-    min-width: 370px;
   }
 
   .intro {
@@ -206,10 +207,29 @@ const introFormat = props.intro;
   .text {
     padding: 0;
     font-size: 0.8rem; /* 當視窗寬度小於600px時，最小字體大小 */
-    width: 340px;
-    min-width: 200px;
+    //width: 340px;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 400px) {
+  .name-and-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    gap: 10px;
+    //width: 500px;
+    //padding: 30px 50px;
   }
 
+  .go-button {
+    margin-left: 0;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    //border-radius: 20px;
+  }
 }
 
 

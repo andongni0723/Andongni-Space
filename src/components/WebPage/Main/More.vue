@@ -25,6 +25,10 @@
 </template>
 
 <style scoped>
+.more {
+  overflow: hidden;
+}
+
 .text-and-button {
   display: flex;
   flex-wrap: wrap;

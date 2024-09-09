@@ -2,6 +2,7 @@
 // import {RightArrowIcon} from "@/Icon/RightArrow-Icon.vue";
 import PageComponent from "@/components/WebPage/Main/MainPageIntroProject-Component.vue";
 import { defineProps, computed } from 'vue';
+import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 
 interface Props
 {
@@ -19,33 +20,27 @@ const introFormat = props.intro;
 
 
 <template>
-  <PageComponent class="component"
-                 :index="index"
-                 :title="title"
-                 :imgSrc="imgSrc"
-                 :intro="introFormat"
-                 :link="link"
-                 project-style="flex-direction: row-reverse"
-                 index-style="margin-right: max(0px, calc((100% - 980px) * 0.5));
-                              margin-left: 0;"
-                 img-style=" float: right" />
+  <ResponsiveWatcher v-slot="rw">
+    <PageComponent v-if="rw.isLess600"
+                   :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
+                   project-style="flex-direction: column;"
+                   index-style="margin: 0;"
+                   img-style="display: block;
+                              float: none;" />
+
+    <PageComponent v-else
+                   :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
+                   project-style="flex-direction: row-reverse"
+                   index-style="margin-right: max(0px, calc((100% - 980px) * 0.5));
+                                margin-left: 0;"
+                   img-style=" float: right" />
+  </ResponsiveWatcher>
+
 
 </template>
 
 <style scoped>
-.component:deep(.project){
-  flex-direction: row-reverse;
-}
 
-.component:deep(.index) {
-  margin-left: 0;
-  margin-right: max(0px, calc((100% - 980px) * 0.5));
-}
-
-.component:deep(.detail-img){
-  display: inline;
-  float: right;
-}
 
 @media (max-width: 600px) {
   .component:deep(.project){

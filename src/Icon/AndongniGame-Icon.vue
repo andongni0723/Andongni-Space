@@ -8,8 +8,8 @@
 
 <style scoped>
 img {
-  width: 186px;
-  height: 63px;
+  width: auto;
+  height: 2.25rem;
   //margin: 50% 0 50% 0;
 }
 </style>
