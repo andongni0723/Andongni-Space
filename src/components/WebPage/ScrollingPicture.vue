@@ -18,7 +18,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </script>
 
 <template>
-  <div class="scrolling-picture">
+  <div class="about">
     <div class="picture-wall">
       <MainViewPicture
           v-for="(path, index) in pathsRef"
@@ -43,7 +43,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </template>
 
 <style scoped>
-.scrolling-picture {
+.about {
   display: flex;
   flex-direction: column;
   position: absolute;

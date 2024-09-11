@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps, computed } from 'vue';
+import Button from "@/components/WebPage/Main/Button.vue";
 
 interface Props
 {
@@ -30,6 +31,7 @@ const introFormat = props.intro;
     <div class="intro">
       <div class="name-and-button" >
         <h1 class="big-title" >{{title}}</h1>
+        <!--<Button style="" :link="link" text="查看"-->
         <a class="go-button" :href="link">
           <p class="button-text">查看</p>
           <i class="fa-thin fa-arrow-right-long"></i>

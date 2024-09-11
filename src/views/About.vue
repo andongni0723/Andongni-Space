@@ -19,50 +19,19 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </script>
 
 <template>
-  <div class="scrolling-picture">
-    <BigTitle title="沈奕瑋"/>
+  <div class="about">
+    <BigTitle title="沈奕瑋" style="font-weight: 800;"/>
   </div>
+
+
 </template>
 
 <style scoped>
-.scrolling-picture {
-  //background-color: #360053;
+.about {
+  padding-top: 100px;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-.picture-wall {
-  display: flex;
-  gap: 10px;
-  padding: 5px 0;
-  animation: scrolling 30s linear infinite;
-  //width: 1300px;
-}
-.left {
-  padding-left: 120px;
-  animation: scrolling-left 30s linear infinite;
-}
-
-.mid {
-  padding-left: 120px;
-}
-
-@keyframes scrolling {
-  0% {
-    transform: translateX(-1300px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes scrolling-left {
-  0% {
-    transform: translateX(0)
-  }
-
-  100% {
-    transform: translateX(-1300px);
-  }
-}
 </style>

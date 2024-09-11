@@ -4,6 +4,7 @@ import {defineProps} from 'vue';
 interface Props
 {
   title: string
+  style: Record<string, string>
 }
 
 const props = defineProps<Props>();
@@ -11,7 +12,7 @@ const props = defineProps<Props>();
 
 <template>
 <div class="big-title">
-  <h1 class="title-text">{{title}}</h1>
+  <h1 class="title-text" :style="style">{{title}}</h1>
   <hr class="line">
 </div>
 </template>
@@ -22,7 +23,7 @@ const props = defineProps<Props>();
 }
 
 .title-text {
-  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", serif;
+  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", sans-serif;
   font-style: italic;
   font-size: 5rem;
   color: var(--main-white-color);
