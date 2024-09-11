@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import {ref, onMounted, onUnmounted, onUpdated} from 'vue';
 
-const isMobile = ref(false);
-const isLess600 = ref(false);
-const isPhone = ref(false);
+const less768 = ref(false);
+const less600 = ref(false);
+const less500 = ref(false);
+const less400 = ref(false);
 
 const checkMobile = () => {
-  isMobile.value = window.innerWidth <= 768;
-  isLess600.value = window.innerWidth <= 600;
-  isPhone.value = window.innerWidth <= 500;
+  less768.value = window.innerWidth <= 768;
+  less600.value = window.innerWidth <= 600;
+  less500.value = window.innerWidth <= 500;
+  less400.value = window.innerWidth <= 400;
 
 };
 
@@ -17,20 +19,20 @@ onMounted(() => {
   window.addEventListener('resize', checkMobile);
 });
 
-onUpdated(() => {
-  checkMobile();
-  // window.addEventListener('resize', checkMobile);
-})
+// onUpdated(() => {
+//   checkMobile();
+//   // window.addEventListener('resize', checkMobile);
+// })
 
 onUnmounted(() => {
   window.removeEventListener('resize', checkMobile);
 });
 
 defineExpose({
-  isMobile, isPhone, isLess600
+  less768, less500, less600, less400
 });
 </script>
 
 <template>
-  <slot :isMobile="isMobile" :isPhone="isPhone" :isLess600="isLess600"></slot>
+  <slot :less768="less768" :less500="less500" :less600="less600" :less400="less400"></slot>
 </template>

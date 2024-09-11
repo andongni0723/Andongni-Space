@@ -1,30 +1,42 @@
 <script setup>
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
+import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
+// import video from "/public/background.mov"
+
+const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage.com/andongni-space-website/Andongni-space-main.mov";
 </script>
 
 <template>
 <div class="main-view">
-  <div class="bg"></div>
+  <!--<div class="bg"></div>-->
+  <div class="bg">
+    <video autoplay muted loop playsinline class="background-video">
+      <source :src="videoLink" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <div class="view">
     <h1 class="space-text size2">WELCOME TO</h1>
     <h1 class="space-text size4">ANDONGNI'S SPACE</h1>
     <!--<p><span class="self">我是<span class="self name">沈奕瑋</span>這裡是我的個人網站</span></p>-->
-    <p class="self">我是沈奕瑋 這裡是我的個人網站 </p>
-    <p><h3 class="self">正在學習遊戲開發</h3></p>
+    <!--<p class="self">我是沈奕瑋 這裡是我的個人網站 </p>-->
+    <!--<p><h3 class="self">正在學習遊戲開發</h3></p>-->
 
-    <ResponsiveWatcher v-slot="event">
-      <div v-if="!event.isPhone" class="show-project">
-        <img class="show-project-img" src="../../../../public/main-view-img/crossing-show.jpeg" alt="">
-        <div class="project-details">
-          <p><h3 class="details-title">作品</h3></p>
-          <hr class="line">
-          <p class="details-text">2D俯視射擊遊戲</p>
-          <p class="details-text">小遊戲</p>
-          <p class="details-text">PC / Mobile</p>
-        </div>
-      </div>
-    </ResponsiveWatcher>
+    <!--<ResponsiveWatcher v-slot="event">-->
+    <!--  <div v-if="!event.isPhone" class="show-project">-->
+    <!--    <img class="show-project-img" src="../../../../public/main-view-img/crossing-show.jpeg" alt="">-->
+    <!--    <div class="project-details">-->
+    <!--      <p><h3 class="details-title">作品</h3></p>-->
+    <!--      <hr class="line">-->
+    <!--      <p class="details-text">2D俯視射擊遊戲</p>-->
+    <!--      <p class="details-text">小遊戲</p>-->
+    <!--      <p class="details-text">PC / Mobile</p>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</ResponsiveWatcher>-->
   </div>
+  <!--<ScrollingPicture class="picture"/>-->
+
 </div>
 </template>
 
@@ -34,23 +46,52 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
   position: relative;
   height: calc(100vh - 3rem);
   width: 100vw;
+  overflow: hidden;
 }
 
+/*
 .bg {
   position: relative;
   height: calc(100vh - 3rem);
   width: 100vw;
   background-repeat: no-repeat;
-  background-image: url("../../../../public/main-view-img/main_background_high.png");
-  background-color: #6b6562;
+  //background-image: url("../../../../public/main-view-img/main_background_high.png");
+  //background-color: #6b6562;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to bottom, #24243e, #302b63, var(--main-drak-black-color));
+  background: linear-gradient(to bottom, #24243e, #302b63,var(--main-drak-black-color));
+
   background-position: 80% 100%;
   background-size: 200vw auto;
   opacity: 70%;
 }
+*/
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1; /* 使影片在內容後面 */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: saturate(0.3); /* 調整飽和度，0.7 代表 70% 的飽和度 */
+  opacity: 50%;
+}
 
 .view {
   position: absolute;
-  top: 0;
+  top: 30vh;
   left: 0;
   padding: 80px 0 0 80px;
   display: flex;
@@ -59,12 +100,12 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 }
 
 .space-text {
-  font-family: "Impact","JetBrains Mono NL",serif;
+  font-family: Impact, "JetBrains Mono", sans-serif;
   //font-style: italic;
   font-size: 2rem;
   color: white;
   padding-bottom: 20px;
-  text-shadow: #433d3a 0 0.1em 0;
+  text-shadow: #433d3a 0.1em 0.1em 0;
 }
 
 p {
@@ -76,6 +117,10 @@ p {
   color: #a6a6a6;
 }
 
+.picture {
+  padding-top: 250px;
+  opacity: 20%;
+}
 .name {
   font-weight: bold;
   font-size: 1.2rem;

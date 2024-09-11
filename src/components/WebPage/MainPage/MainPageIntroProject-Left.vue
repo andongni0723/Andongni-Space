@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // import {RightArrowIcon} from "@/Icon/RightArrow-Icon.vue";
-import PageComponent from "@/components/WebPage/Main/MainPageIntroProject-Component.vue";
+import PageComponent from "@/components/WebPage/MainPage/MainPageIntroProject-Component.vue";
 import { defineProps, computed } from 'vue';
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 
@@ -21,7 +21,7 @@ const introFormat = props.intro;
 
 <template>
   <ResponsiveWatcher v-slot="rw">
-    <PageComponent v-if="rw.isLess600"
+    <PageComponent v-if="rw.less600"
                    :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
                    project-style="flex-direction: column;"
                    index-style="margin: 0;"

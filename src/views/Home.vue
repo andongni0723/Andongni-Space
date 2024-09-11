@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import Footer from "@/components/WebPage/Common/Footer.vue";
-import MainPageIntroProjectRight from "@/components/WebPage/Main/MainPageIntroProject-Right.vue";
-import MainPageIntroProjectLeft from "@/components/WebPage/Main/MainPageIntroProject-Left.vue";
-import BigTitle from "@/components/WebPage/Common/BigTitle.vue";
-import MainView from "@/components/WebPage/Main/MainView.vue";
-import More from "@/components/WebPage/Main/More.vue";
+import Footer from "@/components/WebPage/Main/Footer.vue";
+import MainPageIntroProjectRight from "@/components/WebPage/MainPage/MainPageIntroProject-Right.vue";
+import MainPageIntroProjectLeft from "@/components/WebPage/MainPage/MainPageIntroProject-Left.vue";
+import BigTitle from "@/components/WebPage/Main/BigTitle.vue";
+import MainView from "@/components/WebPage/MainPage/MainView.vue";
+import More from "@/components/WebPage/MainPage/More.vue";
 
 import crossingYAML from "@/assets/data/project-crossing.yaml";
 import gunshootYAML from "@/assets/data/project-gunshoot.yaml";
 import wingwarYAML from "@/assets/data/project-wingwar.yaml";
 import cubemixerYAML from "@/assets/data/project-cubemixer.yaml"
-interface yamlFile {
+interface MainPageYAML {
   index: string;
   title: string;
   imgSrc: string;
@@ -18,10 +18,10 @@ interface yamlFile {
   link: string;
 }
 
-const crossingData: yamlFile = crossingYAML;
-const gunshootData: yamlFile = gunshootYAML;
-const wingwarData: yamlFile = wingwarYAML;
-const cubemixerData: yamlFile = cubemixerYAML;
+const crossingData: MainPageYAML = crossingYAML;
+const gunshootData: MainPageYAML = gunshootYAML;
+const wingwarData: MainPageYAML = wingwarYAML;
+const cubemixerData: MainPageYAML = cubemixerYAML;
 </script>
 
 <template>

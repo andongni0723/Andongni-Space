@@ -12,14 +12,8 @@ interface Props
   indexStyle: Record<string, string>;
   imgStyle: Record<string, string>;
 }
-
-
-
-
 const props = defineProps<Props>();
-
 const introFormat = props.intro;
-// const imgSrcRequire : string = require(props.imgSrc);
 </script>
 
 

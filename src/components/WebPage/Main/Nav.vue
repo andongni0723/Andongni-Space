@@ -2,15 +2,33 @@
 import Logo from '../../../Icon/AndongniGame-Icon.vue';
 import Icon from "@/Icon/Icon.vue"
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
+import {onMounted, onUnmounted, ref} from "vue";
+
+const isScroll = ref(false);
+
+const handleScroll = () =>
+{
+  isScroll.value = window.scrollY > 50;
+}
+
+onMounted(() =>
+{
+  window.addEventListener('scroll', handleScroll);
+})
+
+onUnmounted(() =>
+{
+  window.removeEventListener('scroll', handleScroll);
+})
 </script>
 
 <template>
-<div class="nav">
+<div class="nav" :class="{'scroll': isScroll}">
   <div class="nav-item">
     <div class="logo"><Logo/></div>
-    <ResponsiveWatcher v-slot="{isMobile}">
-      <div v-if="isMobile" class="right-side">
-        <Icon icon-src="fa-solid fa-list fa-2xl" link=""/>
+    <ResponsiveWatcher v-slot="rw">
+      <div v-if="rw.less600" class="right-side">
+        <Icon icon-src="fa-solid fa-list fa-xl" link=""/>
       </div>
       <div v-else class="right-side">
         <!--<a class="nav-button" href="">ABOUT</a>-->
@@ -22,24 +40,28 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
       </div>
     </ResponsiveWatcher>
   </div>
-  <hr class="line">
+  <hr v-show="isScroll" class="line">
 </div>
 </template>
 
 <style scoped>
 .nav {
-  position: sticky;
+  position: fixed;
   margin: 0;
   top: 0;
-  max-width: 100vw;
-  //height: 15vh;
-  background-color: black;
-
+  width: 100vw;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  z-index: 10;
+  z-index: 1000;
+}
+
+.nav.scroll
+{
+  background-color: black;
 }
 
 .nav-item {

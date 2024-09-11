@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // import {RightArrowIcon} from "@/Icon/RightArrow-Icon.vue";
 import { defineProps, computed } from 'vue';
-import PageComponent from "@/components/WebPage/Main/MainPageIntroProject-Component.vue";
+import PageComponent from "@/components/WebPage/MainPage/MainPageIntroProject-Component.vue";
 
 interface Props
 {
