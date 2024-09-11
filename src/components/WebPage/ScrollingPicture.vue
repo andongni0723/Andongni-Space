@@ -11,18 +11,18 @@ interface ScrollingYAML {
 }
 
 const imagePaths: string[] = [
-  "public/scrolling-img/scrolling4.png",
-  "public/scrolling-img/scrolling5.png",
-  "public/scrolling-img/scrolling3.png",
-  "public/scrolling-img/scrolling8.png",
-  "public/scrolling-img/scrolling10.png",
-  "public/scrolling-img/scrolling2.png",
-  "public/scrolling-img/scrolling1.png",
-  "public/scrolling-img/scrolling11.png",
-  "public/scrolling-img/scrolling7.png",
-  "public/scrolling-img/scrolling9.png",
-  "public/scrolling-img/scrolling12.png",
-  "public/scrolling-img/scrolling6.png"
+  "/scrolling-img/scrolling4.png",
+  "/scrolling-img/scrolling5.png",
+  "/scrolling-img/scrolling3.png",
+  "/scrolling-img/scrolling8.png",
+  "/scrolling-img/scrolling10.png",
+  "/scrolling-img/scrolling2.png",
+  "/scrolling-img/scrolling1.png",
+  "/scrolling-img/scrolling11.png",
+  "/scrolling-img/scrolling7.png",
+  "/scrolling-img/scrolling9.png",
+  "/scrolling-img/scrolling12.png",
+  "/scrolling-img/scrolling6.png"
 ];
 
 
