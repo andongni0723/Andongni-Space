@@ -10,10 +10,26 @@ interface ScrollingYAML {
   list: string[]
 }
 
-const jsonString = JSON.stringify(scrollingPathData, null, 2);
-const parsedJson = JSON.parse(jsonString) as ScrollingYAML;
-const paths: string[] = parsedJson.list;
-const pathsRef = ref(paths);
+const imagePaths: string[] = [
+  "public/scrolling-img/scrolling4.png",
+  "public/scrolling-img/scrolling5.png",
+  "public/scrolling-img/scrolling3.png",
+  "public/scrolling-img/scrolling8.png",
+  "public/scrolling-img/scrolling10.png",
+  "public/scrolling-img/scrolling2.png",
+  "public/scrolling-img/scrolling1.png",
+  "public/scrolling-img/scrolling11.png",
+  "public/scrolling-img/scrolling7.png",
+  "public/scrolling-img/scrolling9.png",
+  "public/scrolling-img/scrolling12.png",
+  "public/scrolling-img/scrolling6.png"
+];
+
+
+// const jsonString = JSON.stringify(scrollingPathData, null, 2);
+// const parsedJson = JSON.parse(jsonString) as ScrollingYAML;
+// const paths: string[] = parsedJson.list;
+// const pathsRef = ref(paths);
 const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </script>
 
@@ -21,14 +37,14 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   <div class="about">
     <div class="picture-wall">
       <MainViewPicture
-          v-for="(path, index) in pathsRef"
+          v-for="(path, index) in imagePaths"
           :key="index"
           :link="path"
       />
     </div>
     <div class="picture-wall left">
       <MainViewPicture
-          v-for="(path, index) in pathsRef"
+          v-for="(path, index) in imagePaths"
           :key="index"
           :link="path"
       />
@@ -37,7 +53,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
       <MainViewPicture
           v-for="index in reverseIndexes"
           :key="index"
-          :link="pathsRef[index - 1]" />
+          :link="imagePaths[index - 1]" />
     </div>
   </div>
 </template>
