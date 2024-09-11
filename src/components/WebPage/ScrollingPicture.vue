@@ -11,19 +11,20 @@ interface ScrollingYAML {
 }
 
 const imagePaths: string[] = [
-  "/scrolling-img/scrolling4.png",
-  "/scrolling-img/scrolling5.png",
-  "/scrolling-img/scrolling3.png",
-  "/scrolling-img/scrolling8.png",
-  "/scrolling-img/scrolling10.png",
-  "/scrolling-img/scrolling2.png",
-  "/scrolling-img/scrolling1.png",
-  "/scrolling-img/scrolling11.png",
-  "/scrolling-img/scrolling7.png",
-  "/scrolling-img/scrolling9.png",
-  "/scrolling-img/scrolling12.png",
-  "/scrolling-img/scrolling6.png"
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling4.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling5.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling3.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling8.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling10.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling2.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling1.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling11.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling7.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling9.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling12.png",
+  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling6.png"
 ];
+
 
 
 // const jsonString = JSON.stringify(scrollingPathData, null, 2);
