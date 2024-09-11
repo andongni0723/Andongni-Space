@@ -1,9 +1,55 @@
-<script setup>
+<script setup lang="ts">
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
 // import video from "/public/background.mov"
 
-const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage.com/andongni-space-website/Andongni-space-main.mov";
+// const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage.com/andongni-space-website/Andongni-space-main.mov";
+
+// 定義接口來描述 API 響應的結構
+interface FileResponse {
+  url: string;
+}
+
+// 設置變數類型
+// const bucketName: string = 'your-bucket-name';
+// const fileName: string = 'your-video-file.mp4';
+// const cloudflareAccountId: string = 'your-account-id';
+// const cloudflareApiToken: string = '9e63f79e0f405cb3063048fc5025a0b8';
+
+const options = {
+  method: 'GET',
+  mode: 'no-cors',
+  headers: {'Content-Type': 'application/json', Authorization: 'Bearer cfOCqJZkbPI2JViMfELzHNxn0_uFgil7zQUcglJo',}
+};
+
+// const file: FileResponse;
+fetch('https://api.cloudflare.com/client/v4/accounts/9e63f79e0f405cb3063048fc5025a0b8/r2/andongni-space-website', options)
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+// async function getFileUrl(): Promise<void> {
+//   try {
+//     const response = await fetch(`https://r2.cloudflarestorage.com/andongni-space-website/Andongni-space-main.mov`, {
+//       method: 'GET',
+//       headers: {
+//         'Authorization': `Bearer ${cloudflareApiToken}`,
+//         'Content-Type': 'application/json'
+//       }
+//     });
+//
+//     if (response.ok) {
+//       const data: FileResponse = await response.json();
+//       console.log(`File URL: ${data.url}`);
+//     } else {
+//       console.error('Failed to fetch file URL');
+//     }
+//   } catch (error) {
+//     console.error('An error occurred:', error);
+//   }
+// }
+//
+// getFileUrl();
+
 </script>
 
 <template>
@@ -11,7 +57,7 @@ const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage
   <!--<div class="bg"></div>-->
   <div class="bg">
     <video autoplay muted loop playsinline class="background-video">
-      <source :src="videoLink" type="video/mp4">
+      <source src="https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/Andongni-space-main.mov" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
@@ -74,7 +120,7 @@ const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage
   height: 100%;
   width: 100%;
   overflow: hidden;
-  z-index: -1; /* 使影片在內容後面 */
+  z-index: -1;
 }
 
 .background-video {
@@ -85,7 +131,7 @@ const videoLink = "https://9e63f79e0f405cb3063048fc5025a0b8.r2.cloudflarestorage
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: saturate(0.3); /* 調整飽和度，0.7 代表 70% 的飽和度 */
+  filter: saturate(50%);
   opacity: 50%;
 }
 
