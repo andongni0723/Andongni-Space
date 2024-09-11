@@ -18,7 +18,9 @@ const props = defineProps<Props>();
   height: 150px;
   border-radius: 20px;
   object-fit: cover;
-  filter: saturate(10%);
+  user-select: none;
+  pointer-events: none;
+  filter: saturate(0%) brightness(30%);
 }
 
 @media (max-width: 500px) {

@@ -55,7 +55,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   display: flex;
   gap: 10px;
   padding: 5px 0;
-  animation: scrolling 60s linear infinite;
+  animation: scrolling 90s linear infinite;
 }
 .left {
   padding-left: 120px;

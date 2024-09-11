@@ -81,7 +81,7 @@ fetch('https://api.cloudflare.com/client/v4/accounts/9e63f79e0f405cb3063048fc502
     <!--  </div>-->
     <!--</ResponsiveWatcher>-->
   </div>
-  <!--<ScrollingPicture class="picture"/>-->
+  <ScrollingPicture class="picture"/>
 
 </div>
 </template>
@@ -131,18 +131,19 @@ fetch('https://api.cloudflare.com/client/v4/accounts/9e63f79e0f405cb3063048fc502
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: saturate(50%);
+  filter: saturate(20%) ;
   opacity: 50%;
 }
 
 .view {
   position: absolute;
-  top: 30vh;
+  top: 10vh;
   left: 0;
   padding: 80px 0 0 80px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 20;
 }
 
 .space-text {
@@ -151,7 +152,7 @@ fetch('https://api.cloudflare.com/client/v4/accounts/9e63f79e0f405cb3063048fc502
   font-size: 2rem;
   color: white;
   padding-bottom: 20px;
-  text-shadow: #433d3a 0.1em 0.1em 0;
+  //text-shadow: #433d3a 0.1em 0.1em 0;
 }
 
 p {
@@ -164,9 +165,16 @@ p {
 }
 
 .picture {
-  padding-top: 250px;
-  opacity: 20%;
+  margin-top: 40vh;
+  opacity: 80%;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }
+
+.picture:hover {
+  opacity: 50%;
+}
+
 .name {
   font-weight: bold;
   font-size: 1.2rem;
@@ -213,7 +221,7 @@ p {
 }
 
 .size4 {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 @media (max-width: 700px) {
