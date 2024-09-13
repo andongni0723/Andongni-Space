@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import Nav from "@/components/WebPage/Main/Nav.vue";
-import BigTitle from "@/components/WebPage/Main/BigTitle.vue";
 import MainViewPicture from "@/components/WebPage/MainViewPicture.vue";
-import scrollingPathData from '@/assets/data/scrolling-path.yaml'
-import yamljs from 'js-yaml'
-import {ref} from "vue";
 
 interface ScrollingYAML {
   list: string[]

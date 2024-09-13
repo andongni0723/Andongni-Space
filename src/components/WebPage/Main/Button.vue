@@ -1,16 +1,29 @@
 <script setup lang="ts">
+import { useStore } from 'vuex';
+
 interface Props
 {
   link: string;
   text: string;
   style: Record<string, string>;
+  linkProps: string; // ex. 'name/...'
 }
+
+const store = useStore();
+
+const handleButtonClick = () => {
+  store.commit('SET_BUTTON_CLICKED', true);
+};
 
 const props: Props = defineProps<Props>();
 </script>
 
 <template>
-  <router-link :to="link" class="go-button" :style="style">{{text}}</router-link>
+  <router-link :to="{path: link + '/' + linkProps}" class="go-button" :style="style" @click="handleButtonClick">
+  <!--<router-link :to="{path: '/project/dd', params: {data: 'hi'} }" class="go-button" :style="style" @click="handleButtonClick">-->
+    {{text}}
+    <i class="fa-thin fa-arrow-right-long"></i>
+  </router-link>
 </template>
 
 <style scoped>

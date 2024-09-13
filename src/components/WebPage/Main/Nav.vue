@@ -33,7 +33,9 @@ onUnmounted(() =>
       <div v-else class="right-side">
         <!--<a class="nav-button" href="">ABOUT</a>-->
         <router-link to="/about" class="nav-button">ABOUT</router-link>
-        <a class="nav-button" href="">PROJECTS</a>
+        <!--<a class="nav-button" href="">PROJECTS</a>-->
+        <router-link to="/project" class="nav-button">Project</router-link>
+
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>

@@ -12,9 +12,11 @@ interface Props
   projectStyle: Record<string, string>;
   indexStyle: Record<string, string>;
   imgStyle: Record<string, string>;
+  projectProps: string;
 }
 const props = defineProps<Props>();
 const introFormat = props.intro;
+
 </script>
 
 
@@ -31,11 +33,7 @@ const introFormat = props.intro;
     <div class="intro">
       <div class="name-and-button" >
         <h1 class="big-title" >{{title}}</h1>
-        <!--<Button style="" :link="link" text="查看"-->
-        <a class="go-button" :href="link">
-          <p class="button-text">查看</p>
-          <i class="fa-thin fa-arrow-right-long"></i>
-        </a>
+        <Button style="" link="/project" text="查看" :link-props="projectProps"/>
       </div>
       <div class="text">
         <p v-html="introFormat"/>

@@ -30,6 +30,7 @@ const props = defineProps<Props>();
   margin-bottom: 30px;
   padding-top: 30px;
   margin-left: max(0px, calc((100% - 980px) * 0.5));
+  //padding-left: 10%;
 }
 
 .line {

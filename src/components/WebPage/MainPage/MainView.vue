@@ -9,7 +9,7 @@ import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
   <!--<div class="bg"></div>-->
   <div class="bg">
     <video autoplay muted loop playsinline class="background-video">
-      <source src="https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/Andongni-space-main.mov" type="video/mp4">
+      <source src="https://r2.andongni.me/Andongni-space-main.mov" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
@@ -56,20 +56,25 @@ import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
 
 .view {
   position: absolute;
-  top: 10vh;
-  left: 0;
-  padding: 80px 0 0 80px;
+  top: 8vh;
+  //left: -5vh;
+  padding: 80px 0 0 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  z-index: 20;
+  z-index: 5;
 }
 
 .space-text {
   font-family: Impact, "JetBrains Mono", sans-serif;
-  font-size: 2rem;
-  color: var(--main-white-color);
+  color: var(--view-dark-text-color);
   padding-bottom: 20px;
+  opacity: 50%;
+  transition: color 0.3s;
+}
+
+.space-text:hover {
+  color: var(--main-white-color);
 }
 
 p {
@@ -81,7 +86,7 @@ p {
 .picture {
   margin-top: 40vh;
   opacity: 80%;
-  z-index: 1;
+  z-index: 10;
   transition: opacity 0.3s ease;
 }
 
@@ -94,14 +99,24 @@ p {
 }
 
 .big-size {
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
 
+@media (max-width: 1000px){
+  .view {
+    padding-left: 20px;
+  }
+
+  .big-size {
+    font-size: 6rem;
+  }
+}
 
 @media (max-width: 600px){
   .view {
     padding-left: 20px;
+    left: 0;
   }
 
   .big-size {
