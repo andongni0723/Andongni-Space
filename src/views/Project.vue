@@ -1,31 +1,54 @@
 <script setup lang="ts">
 import BigTitle from "@/components/WebPage/Main/BigTitle.vue";
-import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import Button from "@/components/WebPage/Main/Button.vue";
-import {decodeBase64} from "../components/Func/base64"
-import {load} from "js-yaml"
-import {useRoute, useRouter} from "vue-router";
-import {crossingData, ProjectData} from "../../public/data/ProjectDataManager";
+import {useRouter} from "vue-router";
+import {
+  crossingData,
+  cubemixerData,
+  docardData,
+  gunshootData,
+  ProjectData,
+  wingwar
+} from "../../public/data/ProjectDataManager";
 
-// const indexArray = Array.from({ length: 5 }, (_, i) => i);
+const router = useRouter();
+
 interface Props
 {
   dataID: string // YAML src
 }
 
-
-const router = useRouter()
-
 const props: Props = defineProps<Props>();
-let data: ProjectData;
+let data: ProjectData = {
+  description: "", madeData: "", projectImg: [], projectName: "", projectStudyImg: [], type: ""
+}
 
-
-console.log(props.dataID)
 switch (props.dataID)
 {
+  case "cubemixer":
+    data = cubemixerData;
+    break;
+
   case "crossing":
     data = crossingData;
+    break;
+
+  case "gunshoot":
+    data = gunshootData;
+    break;
+
+  case "wingwar":
+    data = wingwar;
+    break;
+
+  case "docard":
+    data = docardData;
+    break;
+
+  default:
+    router.push('/404');
+    //...
 }
 </script>
 
@@ -76,7 +99,9 @@ switch (props.dataID)
     <img v-for="(path, index) in data.projectStudyImg" class="project-picture" :src="path" :key="index" alt="" >
   </div>
 
+  <div class="back-button-group">
   <Button style="" link="/" text="返回" link-props=""/>
+  </div>
 </div>
 </template>
 
@@ -173,6 +198,13 @@ switch (props.dataID)
   margin: 0;
   border-width:0;
   background-color: var(--main-white-color);
+}
+
+.back-button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
 }
 
 @media (max-width: 600px) {

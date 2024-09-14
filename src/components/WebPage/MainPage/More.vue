@@ -1,25 +1,17 @@
 <script setup lang="ts">
 
+import Button from "@/components/WebPage/Main/Button.vue";
 </script>
 
 <template>
 <div class="more">
   <div class="text-and-button">
     <h1 class="title-text">VIEW ALL PROJECT</h1>
-    <button class="go-button">
-      <p class="button-text-left">所有專案</p>
-      <!--<i class="fa-thin fa-arrow-right-long"></i>-->
-      <i class="fa-solid fa-greater-than "></i>
-    </button>
-      <i/>
+    <Button class="go-button" style="" link="/project" text="所有專案" link-props=""/>
   </div>
   <div class="text-and-button reverse">
     <h1 class="title-text">ABOUT ME</h1>
-    <button class="go-button">
-      <i class="fa-solid fa-less-than"></i>
-      <p class="button-text-right">關於我</p>
-    </button>
-    <i/>
+    <Button class="go-button" style="" link="/about" text="關於我" link-props=""/>
   </div>
 </div>
 </template>

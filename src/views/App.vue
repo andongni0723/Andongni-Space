@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Nav from "@/components/WebPage/Main/Nav.vue";
+import Footer from "@/components/WebPage/Main/Footer.vue";
 </script>
 
 <template>
@@ -7,6 +8,7 @@ import Nav from "@/components/WebPage/Main/Nav.vue";
   <link rel="stylesheet" href="/src/assets/styles/main.css">
   <Nav/>
   <router-view/>
+  <Footer/>
 </template>
 
 <style scoped>

@@ -12,11 +12,11 @@ import {ref} from "vue";
     <div class="text">
       <p>Website made with <a class="fa-brands fa-vuejs vue-icon" href="https://cn.vuejs.org/"/></p>
     </div>
-    <ResponsiveWatcher v-slot="isMobile">
-      <div v-if="!isMobile.isMobile" class="icon">
-        <Icon icon-src="fa-brands fa-facebook fa-2xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
-        <Icon icon-src="fa-brands fa-bilibili fa-2xl" link="https://space.bilibili.com/543329750"/>
-        <Icon icon-src="fa-brands fa-github fa-2xl"   link="https://github.com/andongni0723"/>
+    <ResponsiveWatcher v-slot="rw">
+      <div v-if="!rw.less600" class="icon">
+        <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
+        <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
+        <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
       </div>
     </ResponsiveWatcher>
   </div>

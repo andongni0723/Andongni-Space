@@ -5,20 +5,36 @@ interface ScrollingYAML {
   list: string[]
 }
 
+// const imagePaths: string[] = [
+//   "https://r2.andongni.me/scrolling-img/scrolling4.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling5.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling3.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling8.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling10.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling2.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling1.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling11.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling7.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling9.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling12.png",
+//   "https://r2.andongni.me/scrolling-img/scrolling6.png",
+// ];
+
 const imagePaths: string[] = [
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling4.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling5.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling3.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling8.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling10.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling2.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling1.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling11.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling7.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling9.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling12.png",
-  "https://pub-7b9b4f91e31343e7995a6999a1b601b9.r2.dev/scrolling-img/scrolling6.png"
+  "/scrolling-img/scrolling4.webp",
+  "/scrolling-img/scrolling5.webp",
+  "/scrolling-img/scrolling3.webp",
+  "/scrolling-img/scrolling8.webp",
+  "/scrolling-img/scrolling10.webp",
+  "/scrolling-img/scrolling2.webp",
+  "/scrolling-img/scrolling1.webp",
+  "/scrolling-img/scrolling11.webp",
+  "/scrolling-img/scrolling7.webp",
+  "/scrolling-img/scrolling9.webp",
+  "/scrolling-img/scrolling12.webp",
+  "/scrolling-img/scrolling6.webp",
 ];
+
 
 
 

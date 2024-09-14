@@ -9,7 +9,7 @@ import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
   <!--<div class="bg"></div>-->
   <div class="bg">
     <video autoplay muted loop playsinline class="background-video">
-      <source src="https://r2.andongni.me/Andongni-space-main.mov" type="video/mp4">
+      <source src="https://r2.andongni.me/Andongni-space-main.webm" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
@@ -67,7 +67,8 @@ import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
 
 .space-text {
   font-family: Impact, "JetBrains Mono", sans-serif;
-  color: var(--view-dark-text-color);
+  //color: var(--view-dark-text-color);
+  color: var(--main-white-color);
   padding-bottom: 20px;
   opacity: 50%;
   transition: color 0.3s;

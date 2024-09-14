@@ -1,6 +1,6 @@
 index: "04"
 title: CubeMixer
-imgSrc: "/main-page-img/cubemixer.png"
+imgSrc: "/main-page-img/cubemixer.webp"
 intro: |
   Unity Netcode for GameObject 連線框架 、Rpc資料同步、FSM有限狀態機回合制程式架構、Visual Graph 特效設計，角色系統，技能系統、ScriptableObject角色技能狀態編輯器。
 link: ""
