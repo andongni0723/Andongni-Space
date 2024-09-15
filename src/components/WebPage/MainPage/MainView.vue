@@ -2,6 +2,19 @@
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
 
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.background-video') as HTMLVideoElement;
+
+  if (video) {
+    video.muted = true; // 確保靜音
+    video.play().catch((error: any) => {
+      console.log('Video playback error:', error);
+    });
+  } else {
+    console.log('Video element not found.');
+  }
+});
+
 </script>
 
 <template>
@@ -10,6 +23,8 @@ import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
   <div class="bg">
     <video autoplay muted loop playsinline class="background-video">
       <source src="https://r2.andongni.me/Andongni-space-main.webm" type="video/mp4">
+      <source src="https://r2.andongni.me/Andongni-space-main-mp4.mp4" type="video/mp4">
+
       Your browser does not support the video tag.
     </video>
   </div>

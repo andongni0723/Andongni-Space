@@ -8,6 +8,7 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
     <div class="bg">
       <video autoplay muted loop playsinline class="background-video">
         <source src="https://r2.andongni.me/Andongni-space-main.webm" type="video/mp4">
+        <source src="https://r2.andongni.me/Andongni-space-main-mp4.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
