@@ -90,9 +90,8 @@ switch (props.dataID)
   </div>
 
   <ResponsiveWatcher v-slot="rw">
-    <BigTitle v-if="rw.less600" title="學習歴程" style="font-style: italic; font-family: 'bai jamjuree', 'JetBrains Mono NL', sans-serif; font-weight: 600;"/>
-    <BigTitle v-else title="學習歴程" style="font-style: italic; font-family: 'bai jamjuree', 'JetBrains Mono NL', sans-serif; font-weight: 600;
-                                            padding-left: 2%;"/>
+    <BigTitle v-if="rw.less600" title="Learning Process" />
+    <BigTitle v-else title="Learning Process" style="padding-left: 2%;"/>
   </ResponsiveWatcher>
 
   <div class="project-study-flex">

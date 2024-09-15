@@ -38,7 +38,7 @@ export const cubemixerData: ProjectData = {
 
 export const crossingData: ProjectData = {
     projectName: "Crossing",
-    description: "這是我在2022年1月製作的遊戲，是我第一次製作3D遊戲。起初是因為我的腦海中有一個有趣的小遊戲，但我一直找不到它。最後我決定自己復刻一款出來。原本我是打算自己製作3D美術模型，奈何技術不夠，最後使用Unity Asset Store 的素材。",
+    description: "這是我在2023年8月製作的遊戲，也是我高中自主學習計畫的作品。這是Unity2D射擊遊戲，嘗試使用Unity URP渲染管線、幾何形狀和後處理系統提升美術質感。利用數學向量解決遊戲問題。設計Boss技能、主菜單和敵人行為。使用觀察者設計模式、物件導向-繼承。加入AI語音教學，注重程式效能和玩家體驗。",
     type: "2D俯視射擊小遊戲",
     madeData: "2023/8",
     projectImg: [

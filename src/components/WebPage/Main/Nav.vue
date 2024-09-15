@@ -50,7 +50,7 @@ const listPanel = () =>
       </div>
       <div v-else class="right-side">
         <router-link to="/about" class="nav-button">ABOUT</router-link>
-        <router-link to="/project" class="nav-button">Project</router-link>
+        <router-link to="/project" class="nav-button">PROJECT</router-link>
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
