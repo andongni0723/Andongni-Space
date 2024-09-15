@@ -10,15 +10,30 @@ export interface ProjectData
 
 export const cubemixerData: ProjectData = {
     projectName: "CubeMixer",
-    description: "這是我在2022年1月製作的遊戲，是我第一次製作3D遊戲。起初是因為我的腦海中有一個有趣的小遊戲，但我一直找不到它。最後我決定自己復刻一款出來。原本我是打算自己製作3D美術模型，奈何技術不夠，最後使用Unity Asset Store 的素材。",
+    description: "在做為我高中的最後一個遊戲項目，\n" +
+        "我想學習一個讓我困擾許久的功能 — 網路連線多人遊戲。\n" +
+        "在搜尋了很多可以在Unity使用的網路連線SDK 像是Photon, Mirror 後 ，\n" +
+        "我決定使用Unity官方製作的SDK — Netcode for GameObjects。\n" +
+        "因為是新發佈的SDK，所以網路上的教學很少，\n" +
+        "最後我使用官方的文檔學習實現網路連線功能。",
     type: "2D俯視射擊小遊戲",
-    madeData: "2023/8",
+    madeData: "2024/1",
     projectImg: [
-        "https://r2.andongni.me/scrolling-img/scrolling4.png",
-        "https://r2.andongni.me/scrolling-img/scrolling5.png",
-        "https://r2.andongni.me/scrolling-img/scrolling3.png"
+        "/project-img/cubemixer/project-img-cubemixer-01.webp",
+        "/project-img/cubemixer/project-img-cubemixer-02.webp",
+        "/project-img/cubemixer/project-img-cubemixer-03.webp",
+        "/project-img/cubemixer/project-img-cubemixer-04.webp",
+        "/project-img/cubemixer/project-img-cubemixer-05.webp",
+        "/project-img/cubemixer/project-img-cubemixer-06.webp",
     ],
-    projectStudyImg: []
+    projectStudyImg: [
+        "/project-img/cubemixer/project-img-cubemixer-01.webp",
+        "/project-img/cubemixer/project-img-cubemixer-02.webp",
+        "/project-img/cubemixer/project-img-cubemixer-03.webp",
+        "/project-img/cubemixer/project-img-cubemixer-04.webp",
+        "/project-img/cubemixer/project-img-cubemixer-05.webp",
+        "/project-img/cubemixer/project-img-cubemixer-06.webp",
+    ]
 }
 
 export const crossingData: ProjectData = {
@@ -27,9 +42,11 @@ export const crossingData: ProjectData = {
     type: "2D俯視射擊小遊戲",
     madeData: "2023/8",
     projectImg: [
-        "https://r2.andongni.me/scrolling-img/scrolling4.png",
-        "https://r2.andongni.me/scrolling-img/scrolling5.png",
-        "https://r2.andongni.me/scrolling-img/scrolling3.png"
+        "/project-img/crossing/project/project-img-crossing-01.webp",
+        "/project-img/crossing/project/project-img-crossing-02.webp",
+        "/project-img/crossing/project/project-img-crossing-03.webp",
+        "/project-img/crossing/project/project-img-crossing-04.webp",
+        "/project-img/crossing/project/project-img-crossing-05.webp",
     ],
     projectStudyImg: [
     "/project-img/crossing/project-study/project-study-img-_crossing01.webp",
@@ -87,10 +104,29 @@ export const gunshootData: ProjectData = {
     type: "2D俯視射擊遊戲",
     madeData: "2023/5",
     projectImg: [
-        "https://r2.andongni.me/scrolling-img/scrolling4.png",
-        "https://r2.andongni.me/scrolling-img/scrolling5.png",
+        "/project-img/gunshoot/project/project-img-gunshoot-01.webp",
+        "/project-img/gunshoot/project/project-img-gunshoot-02.webp",
+        "/project-img/gunshoot/project/project-img-gunshoot-03.webp",
+        "/project-img/gunshoot/project/project-img-gunshoot-04.webp",
     ],
-    projectStudyImg: []
+    projectStudyImg: [
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-01.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-02.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-03.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-04.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-05.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-06.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-07.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-08.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-09.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-010.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-011.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-012.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-013.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-014.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-015.webp",
+        "/project-img/gunshoot/project-study/project-study-img-gunshoot-016.webp",
+    ]
 }
 
 export const wingwar: ProjectData = {
@@ -109,7 +145,28 @@ export const docardData: ProjectData = {
     type: "2D卡牌遊戲",
     madeData: "2023/1",
     projectImg: [
-        "https://r2.andongni.me/scrolling-img/scrolling3.png"
+        "/project-img/docard/project/project-img-docard-01.webp",
+        "/project-img/docard/project/project-img-docard-02.webp",
+        "/project-img/docard/project/project-img-docard-03.webp",
+        "/project-img/docard/project/project-img-docard-04.webp",
+        "/project-img/docard/project/project-img-docard-05.webp",
+        "/project-img/docard/project/project-img-docard-06.webp",
     ],
-    projectStudyImg: []
+    projectStudyImg: [
+        "/project-img/docard/project-study/project-study-img-docard-01.webp",
+        "/project-img/docard/project-study/project-study-img-docard-02.webp",
+        "/project-img/docard/project-study/project-study-img-docard-03.webp",
+        "/project-img/docard/project-study/project-study-img-docard-04.webp",
+        "/project-img/docard/project-study/project-study-img-docard-05.webp",
+        "/project-img/docard/project-study/project-study-img-docard-06.webp",
+        "/project-img/docard/project-study/project-study-img-docard-07.webp",
+        "/project-img/docard/project-study/project-study-img-docard-08.webp",
+        "/project-img/docard/project-study/project-study-img-docard-09.webp",
+        "/project-img/docard/project-study/project-study-img-docard-010.webp",
+        "/project-img/docard/project-study/project-study-img-docard-011.webp",
+        "/project-img/docard/project-study/project-study-img-docard-012.webp",
+        "/project-img/docard/project-study/project-study-img-docard-013.webp",
+        "/project-img/docard/project-study/project-study-img-docard-014.webp",
+        "/project-img/docard/project-study/project-study-img-docard-015.webp",
+    ]
 }
