@@ -20,6 +20,23 @@ onUnmounted(() =>
 {
   window.removeEventListener('scroll', handleScroll);
 })
+
+
+//------- Mobile Nav Panel
+const isShowPanel = ref(false)
+
+const listPanel = () =>
+{
+  isShowPanel.value = !isShowPanel.value;
+  // if (isShowPanel.value) {
+  //   setTimeout(() => {
+  //     isShowPanel.value = false;
+  //   }, 300);
+  // } else {
+  //   isShowPanel.value = true;
+  // }
+};
+
 </script>
 
 <template>
@@ -28,14 +45,12 @@ onUnmounted(() =>
     <div class="logo"><Logo/></div>
     <ResponsiveWatcher v-slot="rw">
       <div v-if="rw.less600" class="right-side">
-        <Icon icon-src="fa-solid fa-list fa-xl" link=""/>
+        <!--<Icon icon-src="fa-solid fa-list fa-xl" link=""/>-->
+        <a class="fa-solid fa-list fa-xl " @click="listPanel" style="color: #ffffff;"></a>
       </div>
       <div v-else class="right-side">
-        <!--<a class="nav-button" href="">ABOUT</a>-->
         <router-link to="/about" class="nav-button">ABOUT</router-link>
-        <!--<a class="nav-button" href="">PROJECTS</a>-->
         <router-link to="/project" class="nav-button">Project</router-link>
-
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
@@ -43,6 +58,19 @@ onUnmounted(() =>
     </ResponsiveWatcher>
   </div>
   <hr v-show="isScroll" class="line">
+
+  <div v-if="isShowPanel" class="panel"  :class="{'fade-in': isShowPanel, 'fade-out': !isShowPanel}">
+    <div class="panel-item">
+      <a class="fa-solid fa-xmark fa-2xl" @click="listPanel" style="color: #ffffff;"></a>
+      <router-link @click="listPanel" to="/about" class="nav-button panel-text" >ABOUT</router-link>
+      <router-link @click="listPanel" to="/project" class="nav-button panel-text">Project</router-link>
+      <div class="panel-icon">
+        <Icon @click="listPanel" icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
+        <Icon @click="listPanel" icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
+        <Icon @click="listPanel" icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -93,9 +121,9 @@ h1 {
 }
 
 .nav-button {
-  font-family: "JetBrains Mono NL",serif;
+  font-family:"JetBrains Mono NL",serif;
   font-size: 1.1rem;
-  font-weight: 500;
+  //font-weight: normal ;
   //margin: 0 20px 0 20px;
   color: white;
   outline: none;
@@ -105,6 +133,56 @@ h1 {
 .line {
   color: var(--main-white-color);
   margin: 0;
+}
+
+.panel {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, transparent,var(--main-drak-black-color) 50%);
+  //animation: show-in 0.3s ease;
+  //animation:  show-out 0.3s ease;
+}
+
+
+.panel-item
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 50px;
+  padding: 30px 20px 0 0;
+
+}
+
+.panel-text {
+  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+
+}
+
+.panel-icon {
+  display: flex;
+  gap: 1rem;
+}
+
+.fade-in {
+  animation: fade-in-a 0.3s ease;
+}
+
+.fade-out {
+  animation: fade-out-a 0.3s ease;
+}
+
+
+@keyframes fade-in-a {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade-out-a {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 @media (max-width: 600px) {

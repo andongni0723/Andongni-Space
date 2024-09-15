@@ -105,35 +105,6 @@ const introFormat = props.intro;
   padding: 30px 50px;
 }
 
-.go-button {
-  border: var(--main-light-black-color) solid 1px;
-  border-radius: 30px;
-  color: var(--main-white-color);
-  background-color: var(--main-drak-black-color);
-  text-decoration: none;
-  width: 150px;
-  margin: 30px 50px;
-  padding: 15px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: 0.2s;
-  font-weight: bold;
-  font-size: 0.9rem;
-  letter-spacing: 0.2rem;
-}
-
-.go-button:hover {
-  background-color: var(--main-white-color);
-  color: var(--main-light-black-color);
-  text-decoration: none;
-}
-
-.button-text {
-  width: 40px;
-  font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
-}
 .text {
   color: var(--main-white-color);
   font-family:  "bai jamjuree", "JetBrains Mono NL", sans-serif;
