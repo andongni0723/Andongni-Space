@@ -142,6 +142,7 @@ const introFormat = props.intro;
   line-height: 28px;
   white-space: pre-wrap;
   padding: 0 0 0 50px;
+  max-width: 600px;
 }
 
 
