@@ -17,11 +17,12 @@ const router = useRouter();
 interface Props
 {
   dataID: string // YAML src
+  from: string
 }
 
 const props: Props = defineProps<Props>();
 let data: ProjectData = {
-  description: "", madeData: "", projectImg: [], projectName: "", projectStudyImg: [], type: ""
+  description: "", madeData: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
 }
 
 switch (props.dataID)
@@ -50,6 +51,21 @@ switch (props.dataID)
     router.push('/404');
     //...
 }
+
+const BackButtonToPath = () =>
+{
+  switch (props.from)
+  {
+    case "home":
+      return "/";
+    case "all-project":
+      return "/all-project";
+    default:
+      return "/";
+  }
+}
+
+console.log(props);
 </script>
 
 <template>
@@ -99,7 +115,7 @@ switch (props.dataID)
   </div>
 
   <div class="back-button-group">
-  <Button style="" link="/" text="返回" link-props=""/>
+  <Button style="" :link="BackButtonToPath()" text="返回" link-props=""/>
   </div>
 </div>
 </template>

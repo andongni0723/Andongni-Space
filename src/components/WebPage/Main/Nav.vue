@@ -50,10 +50,11 @@ const listPanel = () =>
       </div>
       <div v-else class="right-side">
         <router-link to="/about" class="nav-button">ABOUT</router-link>
-        <router-link to="/project" class="nav-button">PROJECT</router-link>
+        <router-link to="/all-project" class="nav-button">PROJECT</router-link>
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
+        <Icon icon-src="fa-solid fa-envelope fa-xl" link="mailto:0723@andongni.me"/>
       </div>
     </ResponsiveWatcher>
   </div>
@@ -63,11 +64,12 @@ const listPanel = () =>
     <div class="panel-item">
       <a class="fa-solid fa-xmark fa-2xl" @click="listPanel" style="color: #ffffff;"></a>
       <router-link @click="listPanel" to="/about" class="nav-button panel-text" >ABOUT</router-link>
-      <router-link @click="listPanel" to="/project" class="nav-button panel-text">Project</router-link>
+      <router-link @click="listPanel" to="/all-project" class="nav-button panel-text">Project</router-link>
       <div class="panel-icon">
         <Icon @click="listPanel" icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon @click="listPanel" icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon @click="listPanel" icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
+        <Icon icon-src="fa-solid fa-envelope fa-xl" link="mailto:0723@andongni.me"/>
       </div>
     </div>
   </div>
@@ -158,13 +160,13 @@ h1 {
 .panel-text {
   font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", sans-serif;
   font-size: 1.5rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 
 }
 
 .panel-icon {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .fade-in {

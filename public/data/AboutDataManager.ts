@@ -1,4 +1,12 @@
-import {cppIconPath, csharpIconPath, godotIconPath, rustIconPath, typeScriptIconPath, unityIconPath} from "./SvgPaths";
+import {
+    cppIconPath,
+    csharpIconPath,
+    flutterIconPath,
+    godotIconPath,
+    rustIconPath, swiftIconPath,
+    typeScriptIconPath, ueIconPath,
+    unityIconPath
+} from "./SvgPaths";
 
 export interface EventData {
     title: string;
@@ -62,15 +70,19 @@ export const LearningSkillDataList: SkillData[] = [
 
 export const WantToLearnSkillDataList: SkillData[] = [
     {
+        iconPath: ueIconPath,
+        skillName: "Unreal Engine"
+    },
+    {
         iconPath: rustIconPath,
         skillName: "Rust"
     },
     {
-        iconPath: "",
+        iconPath: flutterIconPath,
         skillName: "Flutter"
     },
     {
-        iconPath: "",
+        iconPath: swiftIconPath,
         skillName: "Swift"
     },
 ];

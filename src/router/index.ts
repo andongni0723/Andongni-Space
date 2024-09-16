@@ -10,7 +10,9 @@ import About from "../views/About.vue";
 // @ts-ignore
 import NotFound from "../views/NotFound.vue";
 // @ts-ignore
-import Project from "../views/Project.vue";  // 關於頁組件
+import Project from "../views/Project.vue";
+// @ts-ignore
+import AllProject from "../views/AllProject.vue";  // 關於頁組件
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -25,7 +27,12 @@ const routes: Array<RouteRecordRaw> = [
         component: About,
     },
     {
-        path: '/project/:dataID?',
+        path: '/all-project',
+        name: 'AllProject',
+        component: AllProject,
+    },
+    {
+        path: '/project/:dataID?/:from?',
         name: 'Project',
         component: Project,
         props: true,

@@ -18,14 +18,14 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 
 <template>
   <div class="about">
-    <BigTitle title="沈奕瑋" style="font-weight: 800; overflow:hidden;"/>
+    <BigTitle title="ABOUT ME" style="overflow:hidden;"/>
 
     <div class="intro">
       <div class="description">
         <p class="small-title">個人簡介</p>
         <p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p>
       </div>
-      <img src="/about-img/my-photo.jpg" alt="my-photo" class="my-photo">
+      <img src="/about-img/my-photo-1.jpg" alt="my-photo" class="my-photo">
     </div>
     <hr class="line">
 
@@ -59,6 +59,11 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
         </div>
       </div>
     </div>
+
+    <div class="contact">
+      <p class="contact-text">Contact me by email </p>
+      <a class="email" href="mailto:0723@andongni.me">0723@andongni.me</a>
+    </div>
   </div>
 
 </template>
@@ -69,6 +74,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: var(--main-drak-black-color);
 }
 
 .intro {
@@ -116,7 +122,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 
 .small-title {
   font-family: "bai jamjuree", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.3rem;
   color: var(--main-white-color);
   padding-bottom: 20px;
@@ -140,7 +146,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   width: 30%;
   max-width: 300px;
   border-radius: 10%;
-
+  border: var(--main-light-black-color) solid 1px;
 }
 
 .short-line {
@@ -177,12 +183,28 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   gap: 20px;
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-bottom: 100px;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 
-@media (max-width: 1400px)
-{
-  .profile {
-    flex-direction: column;
-  }
+}
+
+.contact-text {
+  color: var(--main-white-color);
+  font-family: "JetBrains Mono NL", sans-serif;
+  font-size: 1.5rem;
+
+}
+
+.email {
+  color: var(--link-color);
+  font-family: "JetBrains Mono NL", sans-serif;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 900px) {
@@ -222,5 +244,13 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
     gap: 0;
   }
 
+  .contact-text {
+    font-size: 1rem;
+
+  }
+
+  .email {
+    font-size: 1rem;
+  }
 }
 </style>

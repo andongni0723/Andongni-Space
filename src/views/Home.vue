@@ -33,10 +33,10 @@ const cubemixerData: MainPageYAML = cubemixerYAML;
 <template>
   <MainView/>
   <BigTitle title="PROJECT" style=""/>
-  <MainPageIntroProjectRight index="01" :title="cubemixerData.title" :img-src="cubemixerData.imgSrc" :intro="cubemixerData.intro" :link="cubemixerData.link" link-props="cubemixer" />
-  <MainPageIntroProjectLeft index="02" :title="crossingData.title" :img-src="crossingData.imgSrc" :intro="crossingData.intro" :link="crossingData.link" link-props="crossing"/>
-  <MainPageIntroProjectRight index="03" :title="gunshootData.title" :img-src="gunshootData.imgSrc" :intro="gunshootData.intro" :link="gunshootData.link" link-props="gunshoot"/>
-  <MainPageIntroProjectLeft index="04" :title="wingwarData.title" :img-src="wingwarData.imgSrc" :intro="wingwarData.intro" :link="wingwarData.link" link-props="wingwar"/>
+  <MainPageIntroProjectRight index="01" :title="cubemixerData.title" :img-src="cubemixerData.imgSrc" :intro="cubemixerData.intro" :link="cubemixerData.link" link-props="cubemixer/home" />
+  <MainPageIntroProjectLeft index="02" :title="crossingData.title" :img-src="crossingData.imgSrc" :intro="crossingData.intro" :link="crossingData.link" link-props="crossing/home"/>
+  <MainPageIntroProjectRight index="03" :title="gunshootData.title" :img-src="gunshootData.imgSrc" :intro="gunshootData.intro" :link="gunshootData.link" link-props="gunshoot/home"/>
+  <MainPageIntroProjectLeft index="04" :title="wingwarData.title" :img-src="wingwarData.imgSrc" :intro="wingwarData.intro" :link="wingwarData.link" link-props="wingwar/home"/>
   <More/>
 </template>
 

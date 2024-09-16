@@ -7,7 +7,7 @@ import Button from "@/components/WebPage/Main/Button.vue";
 <div class="more">
   <div class="text-and-button">
     <h1 class="title-text">VIEW ALL PROJECT</h1>
-    <Button class="go-button" style="" link="/project" text="所有專案" link-props=""/>
+    <Button class="go-button" style="" link="/all-project" text="所有專案" link-props=""/>
   </div>
   <div class="text-and-button reverse">
     <h1 class="title-text">ABOUT ME</h1>
