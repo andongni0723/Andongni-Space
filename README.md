@@ -1,29 +1,14 @@
-# andongni-space-vue3
+# andongni.me
+Welcome to me personal website project, where I showcase my game development projects, technical articles.
 
-This template should help get you started developing with Vue 3 in Vite.
+[![github profilo open](https://hackmd.io/_uploads/BJ360C7aR.jpg)](https://andongni.me)
 
-## Recommended IDE Setup
+## Features
+- **Portfolio**: Displays the game development projects and other works I've participated in.
+- **Technical**: Shares my insights and tutorials on programming and game development.
+- **About me**: Introduces myself and showcases my skills.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Tech Stack
+- ![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+- ![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
