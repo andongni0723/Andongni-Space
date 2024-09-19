@@ -2,6 +2,8 @@ export interface ProjectData
 {
     projectName: string,
     projectID: string,
+    projectGithubLink: string,
+    projectGitHubName: string,
     description: string,
     type: string,
     madeData: string,
@@ -12,6 +14,8 @@ export interface ProjectData
 export const cubemixerData: ProjectData = {
     projectName: "CubeMixer",
     projectID: "cubemixer",
+    projectGithubLink: "https://github.com/andongni0723/Unity_DoCard-CubeMixer",
+    projectGitHubName: "Unity_DoCard-CubeMixer",
     description: "在做為我高中的最後一個遊戲項目，\n" +
         "我想學習一個讓我困擾許久的功能 — 網路連線多人遊戲。\n" +
         "在搜尋了很多可以在Unity使用的網路連線SDK 像是Photon, Mirror 後 ，\n" +
@@ -41,6 +45,8 @@ export const cubemixerData: ProjectData = {
 export const crossingData: ProjectData = {
     projectName: "Crossing",
     projectID: "crossing",
+    projectGithubLink: "https://github.com/andongni0723/Unity_Crossing",
+    projectGitHubName: "Unity_Crossing",
     description: "這是我在2023年8月製作的遊戲，也是我高中自主學習計畫的作品。這是Unity2D射擊遊戲，嘗試使用Unity URP渲染管線、幾何形狀和後處理系統提升美術質感。利用數學向量解決遊戲問題。設計Boss技能、主菜單和敵人行為。使用觀察者設計模式、物件導向-繼承。加入AI語音教學，注重程式效能和玩家體驗。",
     type: "2D俯視射擊小遊戲",
     madeData: "2023/8",
@@ -104,6 +110,8 @@ export const crossingData: ProjectData = {
 export const gunshootData: ProjectData = {
     projectName: "GunShoot",
     projectID: "gunshoot",
+    projectGithubLink: "https://github.com/andongni0723/Unity_GunShoot",
+    projectGitHubName: "Unity_GunShoot",
     description: "這是我在2023年5月製作的遊戲，也是我高中自主學習計畫的作品。做這個項目的動機有一半是因為我沒做過這種槍戰遊戲，另一半則是我覺得遊戲不一定要精美的美術，我要證明用一些簡單的幾何形狀就可以做出簡單風格的特效和遊戲美術。在這樣的促使下，這個作品誕生了。",
     type: "2D俯視射擊遊戲",
     madeData: "2023/5",
@@ -136,6 +144,8 @@ export const gunshootData: ProjectData = {
 export const wingwar: ProjectData = {
     projectName: "WingWar",
     projectID: "wingwar",
+    projectGithubLink: "https://github.com/andongni0723/WingWar",
+    projectGitHubName: "WingWar",
     description: "這是我在2022年1月製作的遊戲，是我第一次製作3D遊戲。起初是因為我的腦海中有一個有趣的小遊戲，但我一直找不到它。最後我決定自己復刻一款出來。原本我是打算自己製作3D美術模型，奈何技術不夠，最後使用Unity Asset Store 的素材。",
     type: "3D模擬飛行小遊戲",
     madeData: "2022/1",
@@ -150,6 +160,8 @@ export const wingwar: ProjectData = {
 export const docardData: ProjectData = {
     projectName: "DoCard:H",
     projectID: "docard",
+    projectGithubLink: "https://github.com/andongni0723/Unity_DoCard-H",
+    projectGitHubName: "Unity_DoCard-H",
     description: "這是一個卡牌遊戲項目， 其中我學到了關於進階的遊戲開發程式知識、Unity軟體操作和美術製作，並參加學習自主學習成果發表會上台發表。自學所獲得的學習能力和解決問題能力， 也可以在其他領域發揮用場。",
     type: "2D卡牌遊戲",
     madeData: "2023/1",

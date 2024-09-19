@@ -22,7 +22,7 @@ interface Props
 
 const props: Props = defineProps<Props>();
 let data: ProjectData = {
-  description: "", madeData: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
+  projectGitHubName: "", projectGithubLink: "", description: "", madeData: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
 }
 
 switch (props.dataID)
@@ -70,10 +70,22 @@ console.log(props);
 
 <template>
 <div class="project">
-  <ResponsiveWatcher v-slot="rw">
-    <BigTitle v-if="rw.less600" :title="data.projectName" style="font-style: normal"/>
-    <BigTitle v-else :title="data.projectName" style="font-style: normal; padding-left: 2%;"/>
-  </ResponsiveWatcher>
+  <!--<ResponsiveWatcher v-slot="rw">-->
+  <!--  <BigTitle v-if="rw.less600" :title="data.projectName" style="font-style: normal"/>-->
+  <!--  <BigTitle v-else :title="data.projectName" style="font-style: normal; padding-left: 2%;"/>-->
+  <!--</ResponsiveWatcher>-->
+  <div class="big-title">
+    <div class="title-group">
+      <h1 class="title-text">{{data.projectName}}</h1>
+      <div class="github-group">
+        <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+        <a class="github-link" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
+          andongni0723/{{data.projectGitHubName}}
+        </a>
+      </div>
+    </div>
+    <hr class="line">
+  </div>
 
   <div class="intro">
     <div class="description">
@@ -128,12 +140,45 @@ console.log(props);
   height: 100%;
 }
 
+.title-group {
+  display: flex;
+  //align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 11% 50px 11%;
+}
+
+.title-text {
+  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", sans-serif;
+  font-style: normal;
+  font-size: 5rem;
+  color: var(--main-white-color);
+  padding-top: 30px;
+  margin-left: max(0px, calc((100% - 980px) * 0.5));
+}
+
 .intro {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+}
+
+
+.github-group {
+  //margin: 25px max(0px, calc((100% - 980px) * 0.5)) 25px 0;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+.github-link {
+  font-family: "JetBrains Mono NL", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--main-white-color);
+  text-decoration: none;
 }
 
 .project-picture-grid
@@ -226,6 +271,14 @@ console.log(props);
   .intro {
     flex-direction: column;
     padding: 0;
+  }
+
+  .title-text {
+    font-size: 4rem;
+  }
+
+  .github-link {
+    font-size: 1rem;
   }
 
   .description {
