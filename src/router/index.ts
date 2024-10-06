@@ -36,14 +36,13 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Project',
         component: Project,
         props: true,
-        beforeEnter: (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-            // 檢查是否是通過按鈕點擊觸發進入的
-            if (store.state.isButtonClicked) {
-                next(); // 允許進入
-            } else {
-                next('/404'); // 禁止訪問，重定向到首頁
-            }
-        },
+        // beforeEnter: (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+        //     if (store.state.isButtonClicked) {
+        //         next(); // 允許進入
+        //     } else {
+        //         next('/404'); // 禁止訪問，重定向到首頁
+        //     }
+        // },
     },
     {
         path: '/:pathMatch(.*)*',

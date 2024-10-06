@@ -127,7 +127,7 @@ console.log(props);
   </div>
 
   <div class="back-button-group">
-  <Button style="" :link="BackButtonToPath()" text="返回" link-props=""/>
+  <Button style="" @click="router.go(-1)" text="返回" link-props=""/>
   </div>
 </div>
 </template>
