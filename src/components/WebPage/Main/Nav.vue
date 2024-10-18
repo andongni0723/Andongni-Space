@@ -44,17 +44,19 @@ const listPanel = () =>
   <div class="nav-item">
     <div class="logo"><Logo/></div>
     <ResponsiveWatcher v-slot="rw">
-      <div v-if="rw.less600" class="right-side">
-        <!--<Icon icon-src="fa-solid fa-list fa-xl" link=""/>-->
-        <a class="fa-solid fa-list fa-xl " @click="listPanel" style="color: #ffffff;"></a>
-      </div>
-      <div v-else class="right-side">
+
+      <div v-if="rw.width >= 600" class="right-side">
         <router-link to="/about" class="nav-button">ABOUT</router-link>
         <router-link to="/all-project" class="nav-button">PROJECT</router-link>
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
         <Icon icon-src="fa-solid fa-envelope fa-xl" link="mailto:0723@andongni.me"/>
+      </div>
+
+      <div v-else class="right-side">
+        <!--<Icon icon-src="fa-solid fa-list fa-xl" link=""/>-->
+        <a class="fa-solid fa-list fa-xl " @click="listPanel" style="color: #ffffff;"></a>
       </div>
     </ResponsiveWatcher>
   </div>

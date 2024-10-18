@@ -70,15 +70,16 @@ console.log(props);
 
 <template>
 <div class="project">
-  <!--<ResponsiveWatcher v-slot="rw">-->
-  <!--  <BigTitle v-if="rw.less600" :title="data.projectName" style="font-style: normal"/>-->
-  <!--  <BigTitle v-else :title="data.projectName" style="font-style: normal; padding-left: 2%;"/>-->
-  <!--</ResponsiveWatcher>-->
   <div class="big-title">
     <div class="title-group">
       <h1 class="title-text">{{data.projectName}}</h1>
       <div class="github-group">
-        <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+        <ResponsiveWatcher v-slot="rw">
+          <div v-if="rw.width >= 600">
+            <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i></div>
+          <div v-else>
+            <i class="fa-brands fa-github fa-xl" style="color: #ffffff;"></i></div>
+        </ResponsiveWatcher>
         <a class="github-link" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
           andongni0723/{{data.projectGitHubName}}
         </a>
@@ -93,8 +94,8 @@ console.log(props);
       <p class="small-text">{{data.description}}</p>
     </div>
     <ResponsiveWatcher v-slot="rw">
-      <hr v-if="rw.less600" class="short-line">
-      <hr v-else class="vertical">
+      <hr v-if="rw.width >= 600" class="vertical">
+      <hr v-else class="short-line">
     </ResponsiveWatcher>
     <div class="type-and-date-flex">
       <div class="type-and-date">
@@ -109,8 +110,8 @@ console.log(props);
   </div>
 
   <ResponsiveWatcher v-slot="rw">
-    <hr v-if="rw.less600" class="short-line">
-    <hr v-else class="line">
+    <hr v-if="rw.width >= 600" class="line">
+    <hr v-else class="short-line">
   </ResponsiveWatcher>
 
   <div class="project-picture-grid">
@@ -118,8 +119,8 @@ console.log(props);
   </div>
 
   <ResponsiveWatcher v-slot="rw">
-    <BigTitle v-if="rw.less600" title="Learning Process" />
-    <BigTitle v-else title="Learning Process" style="padding-left: 2%;"/>
+    <BigTitle v-if="rw.width >= 600" title="Learning Process" style="padding-left: 2%;"/>
+    <BigTitle v-else title="Learning Process"/>
   </ResponsiveWatcher>
 
   <div class="project-study-flex">
@@ -168,7 +169,9 @@ console.log(props);
 
 
 .github-group {
-  //margin: 25px max(0px, calc((100% - 980px) * 0.5)) 25px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
   margin-top: 50px;
   margin-bottom: 8px;
 }
@@ -306,6 +309,12 @@ console.log(props);
 
   .project-study-flex {
     padding: 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .github-link {
+    font-size: 0.8rem;
   }
 }
 </style>

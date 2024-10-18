@@ -18,12 +18,12 @@ import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
       <p>Oops! You enter a unknown place.</p>
       <ResponsiveWatcher v-slot="rw">
 
-        <Button v-if="rw.less400" link="/" text="Back"
+        <Button v-if="rw.width <= 400" link="/" text="Back"
                 style="font-family: 'JetBrains Mono',sans-serif;letter-spacing: 2px;
                      width: 80%;
                      margin:30px;" link-props=""/>
 
-        <Button v-else-if="rw.less600" link="/" text="Back"
+        <Button v-else-if="rw.width <= 600" link="/" text="Back"
                 style="font-family: 'JetBrains Mono',sans-serif; letter-spacing: 2px; width: 250px;
                      margin:30px" link-props=""/>
 
