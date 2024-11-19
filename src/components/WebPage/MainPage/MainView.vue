@@ -24,17 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
     <video autoplay muted loop playsinline class="background-video">
       <source src="https://r2.andongni.me/Andongni-space-main.webm" type="video/mp4">
       <source src="https://r2.andongni.me/Andongni-space-main-mp4.mp4" type="video/mp4">
-
       Your browser does not support the video tag.
     </video>
   </div>
-  <div class="view">
-    <h1 class="space-text small-size">WELCOME TO</h1>
-    <h1 class="space-text big-size">ANDONGNI'S SPACE</h1>
 
-  </div>
+  <ResponsiveWatcher v-slot="rw">
+    <div v-if="rw.width >= 750" class="view">
+      <h1 class="space-text small-size">WELCOME TO</h1>
+      <h1 class="space-text big-size">ANDONGNI'S SPACE</h1>
+    </div>
+
+    <div v-else class="view">
+      <h1 class="space-text small-size">WELCOME TO</h1>
+      <h1 class="space-text big-size">ANDONGNI'S</h1>
+      <h1 class="space-text mid-size">SPACE</h1>
+    </div>
+  </ResponsiveWatcher>
+
   <ScrollingPicture class="picture"/>
-
 </div>
 </template>
 
@@ -82,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .space-text {
   font-family: Impact, "JetBrains Mono", sans-serif;
-  //color: var(--view-dark-text-color);
   color: var(--main-white-color);
   padding-bottom: 20px;
   opacity: 50%;
@@ -97,10 +103,8 @@ p {
   padding-bottom: 10px;
 }
 
-
-
 .picture {
-  margin-top: 40vh;
+  margin-top: 50vh;
   opacity: 80%;
   z-index: 10;
   transition: opacity 0.3s ease;
@@ -112,6 +116,10 @@ p {
 
 .small-size {
   font-size: 2rem;
+}
+
+.mid-size{
+  font-size: 5rem;
 }
 
 .big-size {
@@ -136,7 +144,7 @@ p {
   }
 
   .big-size {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 }
 
@@ -155,18 +163,29 @@ p {
 
   .space-text, .self{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     width: 386px;
   }
 }
 
+
 @media (max-width: 400px) {
 
-  .small-size {
-    font-size: 1.5rem;
+  .view {
+    padding: 100px 0 0 0;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
   }
-  .big-size {
-    font-size: 2.5rem;
+  .big-size{
+    font-size: 4rem;
+  }
+  .mid-size{
+    font-size: 3rem;
+  }
+  .small-size{
+    font-size: 1.5rem;
   }
 }
 

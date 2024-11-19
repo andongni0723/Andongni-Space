@@ -34,7 +34,7 @@ export const SpecialEventDataList: EventData[] = [
     },
     {
         title: "APCS大學程式設計先修檢測",
-        result: "觀念3級分 實作3級分"
+        result: "觀念4級分 實作3級分"
     }
 ];
 

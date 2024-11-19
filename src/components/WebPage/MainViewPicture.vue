@@ -25,8 +25,8 @@ const props = defineProps<Props>();
 
 @media (max-width: 500px) {
   .show-project-img {
-    width: 150px;
-    height: 90px;
+    width: 200px;
+    height: 130px;
     border-radius: 10px;
   }
 
