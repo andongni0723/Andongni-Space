@@ -4,7 +4,7 @@ Welcome to me personal website project, where I showcase my game development pro
 [![github profilo open](https://hackmd.io/_uploads/BJ360C7aR.jpg)](https://andongni.me)
 
 ## Features
-- **Portfolio**: Displays the game development projects and other works I've participated in.
+- **Portfolio**: Displays the game development projects and other works I've made it.
 - **Technical**: Shares my insights and tutorials on programming and game development.
 - **About me**: Introduces myself and showcases my skills.
 
