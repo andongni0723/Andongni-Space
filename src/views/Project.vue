@@ -173,6 +173,7 @@ console.log(props);
   gap: 10px;
   align-items: center;
   margin-top: 50px;
+  margin-left: max(0px, calc((100% - 980px) / 2));
   margin-bottom: 8px;
 }
 
