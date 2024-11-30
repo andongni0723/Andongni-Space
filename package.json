@@ -1,6 +1,6 @@
 {
   "name": "andongni-space-vue3",
-  "version": "3.3.2",
+  "version": "4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,10 +15,14 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "highlight.js": "^11.10.0",
     "js-yaml": "^4.1.0",
+    "lodash-es": "^4.17.21",
+    "marked": "^15.0.2",
     "vue": "^3.4.21",
     "vue-router": "^4.4.3",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "zero-md": "^3.1.6"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",

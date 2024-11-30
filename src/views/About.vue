@@ -4,6 +4,8 @@ import scrollingPathData from '../../public/data/scrolling-path.yaml'
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import {AllSkillDataList, SpecialEventDataList} from "../../public/data/AboutDataManager";
 import {ref} from "vue";
+import MarkdownRenderer from "@/components/Markdown/MarkdownRenderer.vue";
+import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
 
 interface ScrollingYAML {
   list: string[]
@@ -19,7 +21,6 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 <template>
   <div class="about">
     <BigTitle title="ABOUT ME" style="overflow:hidden;"/>
-
     <div class="intro">
       <div class="description">
         <p class="small-title">個人簡介</p>

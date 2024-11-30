@@ -11,6 +11,8 @@ import {
   ProjectData,
   wingwar
 } from "../../public/data/ProjectDataManager";
+import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
+import MainPageIntroProjectRight from "@/components/WebPage/MainPage/MainPageIntroProject-Right.vue";
 
 const router = useRouter();
 
@@ -22,7 +24,7 @@ interface Props
 
 const props: Props = defineProps<Props>();
 let data: ProjectData = {
-  projectGitHubName: "", projectGithubLink: "", description: "", madeData: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
+  projectGitHubName: "", projectGithubLink: "", description: "", madeData: "", readmePath: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
 }
 
 switch (props.dataID)
@@ -70,9 +72,13 @@ console.log(props);
 
 <template>
 <div class="project">
+
+  <!-- Project Title / Game Name -->
   <div class="big-title">
     <div class="title-group">
       <h1 class="title-text">{{data.projectName}}</h1>
+
+      <!-- Project Github Path ( icon and text ) -->
       <div class="github-group">
         <ResponsiveWatcher v-slot="rw">
           <div v-if="rw.width >= 600">
@@ -81,13 +87,13 @@ console.log(props);
             <i class="fa-brands fa-github fa-xl" style="color: #ffffff;"></i></div>
         </ResponsiveWatcher>
         <a class="github-link" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
-          andongni0723/{{data.projectGitHubName}}
-        </a>
+          andongni0723/{{data.projectGitHubName}}</a>
       </div>
     </div>
     <hr class="line">
   </div>
 
+  <!-- Project Introduction -->
   <div class="intro">
     <div class="description">
       <p class="small-title">描述</p>
@@ -97,6 +103,7 @@ console.log(props);
       <hr v-if="rw.width >= 600" class="vertical">
       <hr v-else class="short-line">
     </ResponsiveWatcher>
+
     <div class="type-and-date-flex">
       <div class="type-and-date">
         <p class="small-title">類型</p>
@@ -108,12 +115,15 @@ console.log(props);
       </div>
     </div>
   </div>
-
   <ResponsiveWatcher v-slot="rw">
     <hr v-if="rw.width >= 600" class="line">
     <hr v-else class="short-line">
   </ResponsiveWatcher>
 
+  <!-- Project Github Readme (markdown) -->
+  <NewConvertMarkdown :markdown-path="data.readmePath"/>
+
+  <!-- Game Photo-->
   <div class="project-picture-grid">
     <img v-for="(path, index) in data.projectImg" class="project-picture" :src="path" :key="index" alt="" >
   </div>
@@ -123,10 +133,12 @@ console.log(props);
     <BigTitle v-else title="Learning Process"/>
   </ResponsiveWatcher>
 
+  <!-- Learning Process Photo -->
   <div class="project-study-flex">
     <img v-for="(path, index) in data.projectStudyImg" class="project-picture" :src="path" :key="index" alt="" >
   </div>
 
+  <!-- Back Button -->
   <div class="back-button-group">
   <Button style="" @click="router.go(-1)" text="返回" link-props=""/>
   </div>

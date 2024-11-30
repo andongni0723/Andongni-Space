@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { encodeBase64 } from "../components/Func/base64";
-import Footer from "@/components/WebPage/Main/Footer.vue";
 import MainPageIntroProjectRight from "@/components/WebPage/MainPage/MainPageIntroProject-Right.vue";
 import MainPageIntroProjectLeft from "@/components/WebPage/MainPage/MainPageIntroProject-Left.vue";
 import BigTitle from "@/components/WebPage/Main/BigTitle.vue";

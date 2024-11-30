@@ -12,7 +12,9 @@ import NotFound from "../views/NotFound.vue";
 // @ts-ignore
 import Project from "../views/Project.vue";
 // @ts-ignore
-import AllProject from "../views/AllProject.vue";  // 關於頁組件
+import AllProject from "../views/AllProject.vue";
+// @ts-ignore
+import NewConvertMarkdown from "../components/Markdown/NewConvertMarkdown.vue";  // 關於頁組件
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -43,6 +45,11 @@ const routes: Array<RouteRecordRaw> = [
         //         next('/404'); // 禁止訪問，重定向到首頁
         //     }
         // },
+    },
+    {
+        path: '/test',
+        name: 'Test',
+        component: NewConvertMarkdown
     },
     {
         path: '/:pathMatch(.*)*',
