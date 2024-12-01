@@ -1,8 +1,7 @@
 
 # Crossing
 
-![crossing-readme-img.jpeg](/public/project-data/crossing/crossing-readme-img.jpeg)
-
+![crossing-readme-img.jpeg](https://github.com/andongni0723/Unity_Crossing/blob/main/Assets/Crossing-GameAssets/Logo/crossing-github-readme-img.jpeg?raw=true)
 
 ## 📄 遊戲描述
 > 此專案是一款由我使用 **Unity2022.3.10** 開發的小型射擊遊戲。在遊戲中，你將控制一個小方塊來射擊敵人。你會遇到普通方塊、危險的牆、雷射方塊、護盾方塊以及一個最終 Boss。

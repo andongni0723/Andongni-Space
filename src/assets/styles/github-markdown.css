@@ -7,12 +7,14 @@
     margin-left: max(11%, calc((100% - 980px) * 0.5));
     margin-right: max(11%, calc((100% - 980px) * 0.5));
     /*padding: 0 11% 50px 11%;*/
-
-
+    padding: 30px;
+    border: #0d1117 1px solid;
+    border-radius: 6px;
+    box-shadow: rgb(13 17 38) 0px 30px 60px -12px inset, rgb(174 174 174 / 30%) 0px 18px 36px -18px inset;
     /*color: #f0f6fc;*/
     /*color: rgb(222, 220, 217)*/
     color: var(--main-white-color);
-    /*background-color: #0d1117;*/
+    background-color: #0d1117;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: 16px;
     line-height: 1.5;
