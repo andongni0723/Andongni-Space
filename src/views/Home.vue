@@ -11,6 +11,7 @@ import wingwarYAML from "../../public/data/view-wingwar.yaml";
 import cubemixerYAML from "../../public/data/view-cubemixer.yaml";
 
 import projectCrossingYAML from "../../public/data/project-crossing.yaml";
+import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
 interface MainPageYAML {
   index: string;
   title: string;
@@ -29,6 +30,7 @@ const cubemixerData: MainPageYAML = cubemixerYAML;
 </script>
 
 <template>
+  <LoadingPanel duration-second="3"/>
   <MainView/>
   <BigTitle title="PROJECT" style=""/>
   <MainPageIntroProjectRight index="01" :title="cubemixerData.title" :img-src="cubemixerData.imgSrc" :intro="cubemixerData.intro" :link="cubemixerData.link" link-props="cubemixer/home" />

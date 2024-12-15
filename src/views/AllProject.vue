@@ -2,6 +2,7 @@
 import {AllProject} from "../../public/data/ProjectDataManager";
 import {useRouter} from "vue-router";
 import { useStore } from 'vuex';
+import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
 
 const store = useStore();
 const router = useRouter();

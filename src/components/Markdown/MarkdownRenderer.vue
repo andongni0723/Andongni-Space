@@ -17,21 +17,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    // 定義高亮處理
-    // marked.use({
-    //   renderer: {
-    //     // code(code: string, lang: string, _escaped: boolean) {
-    //     code(code: string, lang: string) {
-    //       const validLang = lang && hljs.getLanguage(lang);
-    //       const highlighted = validLang
-    //           ? hljs.highlight(code, { language: lang }).value
-    //           : hljs.highlightAuto(code).value;
-    //
-    //       return `<pre><code class="hljs ${lang}">${highlighted}</code></pre>`;
-    //     },
-    //   },
-    // });
-
     // 轉換 Markdown
     const renderedMarkdown = computed(() => marked(props.content));
 

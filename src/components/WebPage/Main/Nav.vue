@@ -3,8 +3,10 @@ import Logo from '../../../Icon/AndongniGame-Icon.vue';
 import Icon from "@/Icon/Icon.vue"
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import {onMounted, onUnmounted, ref} from "vue";
+import {useRouter} from "vue-router";
 
 const isScroll = ref(false);
+const router = useRouter();
 
 const handleScroll = () =>
 {
@@ -23,31 +25,36 @@ onUnmounted(() =>
 
 
 //------- Mobile Nav Panel
-const isShowPanel = ref(false)
-
+const isShowPanel = ref(false);
 const listPanel = () =>
 {
   isShowPanel.value = !isShowPanel.value;
-  // if (isShowPanel.value) {
-  //   setTimeout(() => {
-  //     isShowPanel.value = false;
-  //   }, 300);
-  // } else {
-  //   isShowPanel.value = true;
-  // }
 };
 
+// ------- Handle fade-out and navigation
+const isFading = ref(false); // 控制淡出動畫
+const navigateTo = (path: string) => {
+  isFading.value = true; // 觸發淡出動畫
+  setTimeout(() => {
+    router.push(path); // 動畫完成後跳轉
+    isFading.value = false; // 重置狀態
+  }, 500); // 時間與淡出動畫的時長一致
+};
 </script>
 
 <template>
 <div class="nav" :class="{'scroll': isScroll}">
+  <div v-if="isFading" class="fade-overlay"></div>
+
   <div class="nav-item">
     <div class="logo"><Logo/></div>
     <ResponsiveWatcher v-slot="rw">
 
       <div v-if="rw.width >= 600" class="right-side">
-        <router-link to="/about" class="nav-button">ABOUT</router-link>
-        <router-link to="/all-project" class="nav-button">PROJECT</router-link>
+        <!--<router-link to="/about" class="nav-button">ABOUT</router-link>-->
+        <!--<router-link to="/all-project" class="nav-button">PROJECT</router-link>-->
+        <button @click="navigateTo('/about')" class="nav-button">ABOUT</button>
+        <button @click="navigateTo('/all-project')" class="nav-button">PROJECT</button>
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
         <Icon icon-src="fa-brands fa-bilibili fa-xl" link="https://space.bilibili.com/543329750"/>
         <Icon icon-src="fa-brands fa-github fa-xl"   link="https://github.com/andongni0723"/>
@@ -85,7 +92,7 @@ const listPanel = () =>
   top: 0;
   width: 100vw;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -131,7 +138,9 @@ h1 {
   //margin: 0 20px 0 20px;
   color: white;
   outline: none;
+  background-color: transparent;
   text-decoration: none;
+  border: none;
 }
 
 .line {
@@ -172,13 +181,34 @@ h1 {
 }
 
 .fade-in {
-  animation: fade-in-a 0.3s ease;
+  animation: fade-in-a 0.5s ease;
 }
 
 .fade-out {
-  animation: fade-out-a 0.3s ease;
+  animation: fade-out-a 0.5s ease;
 }
 
+
+.fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+  animation: fadeOut 0.3s forwards;
+  z-index: 999;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes fade-in-a {
   0% {opacity: 0;}

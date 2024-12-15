@@ -6,13 +6,22 @@ import Footer from "@/components/WebPage/Main/Footer.vue";
 <template>
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
   <link rel="stylesheet" href="/src/assets/styles/main.css">
+
   <Nav/>
-  <router-view/>
+  <transition name="fade-content" mode="out-in">
+    <router-view />
+  </transition>
+
   <Footer/>
 </template>
 
 <style scoped>
-body {
-  background-color: black;
+
+.fade-content-enter-active, .fade-content-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-content-enter-from, .fade-content-leave-to {
+  opacity: 0;
 }
 </style>
