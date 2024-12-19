@@ -6,6 +6,7 @@ import {AllSkillDataList, SpecialEventDataList} from "../../public/data/AboutDat
 import {ref} from "vue";
 import MarkdownRenderer from "@/components/Markdown/MarkdownRenderer.vue";
 import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
+import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
 
 interface ScrollingYAML {
   list: string[]

@@ -1,135 +1,125 @@
 <script setup lang="ts">
-import AndongniGameIcon from "@/Icon/AndongniGame-Icon.vue";
-import {onMounted, ref, defineProps} from "vue";
+import { onMounted, ref, defineProps, watch } from "vue";
 
+// Props 介面定義
 interface Props {
-  durationSecond: number
+  isLoading: boolean;
 }
 
 const props = defineProps<Props>();
 
-let cssVars = function() {
-  return {
-    '--duration': props.durationSecond + 's',
-    '--duration-fill': props.durationSecond - 0.5 + 's'
-  }
-}
+// 狀態管理
+const isPanelLoading = ref(true);  // 控制面板載入狀態
+const isAnimation = ref(false);     // 控制動畫狀態
 
-onMounted(() => {
-  loading(props.durationSecond);
-});
-
-const isLoading = ref(true);
-const loading = (_duration: number) => {
+/**
+ * 處理載入完成後的狀態轉換
+ * 1. 延遲 1 秒後開始結束動畫
+ * 2. 再延遲 1 秒後結束動畫
+ */
+const loadingDone = () => {
   setTimeout(() => {
-    isLoading.value = false;
-  }, _duration * 1000);
-}
+    isPanelLoading.value = false;
+    isAnimation.value = true;
+    setTimeout(() => {
+      isAnimation.value = false;
+    }, 1000);
+  }, 1000);
+};
+
+const initial = () => {
+  isPanelLoading.value = true;
+  isAnimation.value = false;
+};
+
+// 監聽 props.isLoading 的變化
+watch(
+    () => props.isLoading,
+    (newVal) => {
+      if(newVal)    // 載入開始時
+        initial();
+      else          // 載入完成時
+      {
+        loadingDone();
+      }
+    }
+);
+
+
+
 </script>
 
 <template>
-<div v-if="isLoading" class="panel" :style="cssVars">
-  <div class="progress-container" :style="cssVars">
-    <div class="progress-bar" :style="cssVars">
-      <div class="progress-bar__filler" :style="cssVars"></div>
-      <div class="progress-bar__overlay" :style="cssVars"></div>
-      <AndongniGameIcon style="
-      scale: 1;
-      color: var(--main-white-color);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 20;"/>
+  <div v-show="isPanelLoading || isAnimation" :class="{'panel': true, 'panel-close': isAnimation}">
+    <div class="loading-content">
+      <div class="logo">
+        <img class="andongni-logo" src="/andongni_game_white_.svg" alt="andongni logo" />
+      </div>
+      <div class="loading-bar">
+        <img class="spinner" src="/spinner.svg" alt="spinner"/>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped>
+
+
 .panel {
   position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: var(--main-drak-black-color);
   opacity: 1;
-  animation: fadeOut 3s forwards;
-  z-index: 1000;
+  z-index: 1010;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  scale: 2;
+.panel-close {
+  animation: fadeOut 1s forwards;
 }
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  from {opacity: 1;}
+  to {opacity: 0;}
 }
 
-/* Loading Bar */
-.progress-container {
+.loading-content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 50px;
-  position: relative;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 100%;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  position: relative;
-  overflow: hidden;
+.logo {
+  padding-right: 15px;
 }
 
-.progress-bar__filler {
+.andongni-logo {
+  width: 300px;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+
+.loading-bar {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(to right, var(--main-white-color) 0%, var(--main-white-color) 100%);
-  clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 100%
-  );
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: fill-border 2.5s forwards;
+  bottom: 0;
+
+  margin-bottom: 5vh;
 }
 
-.progress-bar__overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 98%; /* 相对于容器宽度的90% */
-  height: 94%; /* 相对于容器高度的80% */
-  border-radius: 50px;
-  background-color: var(--main-drak-black-color);
-  z-index: 10;
+.spinner {
+  width: 40px;
+  animation: rotateSpinner 1s linear infinite;
 }
 
-@keyframes fill-border {
-  to {
-    transform: scaleX(1);
-  }
+@keyframes rotateSpinner {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
 </style>

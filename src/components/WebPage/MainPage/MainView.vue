@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
 import ScrollingPicture from "@/components/WebPage/ScrollingPicture.vue";
+import { ref } from 'vue';
 
 document.addEventListener('DOMContentLoaded', function() {
   const video = document.querySelector('.background-video') as HTMLVideoElement;
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+//test
 </script>
 
 <template>
@@ -46,11 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </template>
 
 <style scoped>
-.main-view
-{
+.main-view {
   position: relative;
   height: calc(100vh - 3rem);
-  width: 100vw;
   overflow: hidden;
 }
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   z-index: -1;
 }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
   z-index: -1;

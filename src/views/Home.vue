@@ -12,6 +12,7 @@ import cubemixerYAML from "../../public/data/view-cubemixer.yaml";
 
 import projectCrossingYAML from "../../public/data/project-crossing.yaml";
 import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
+import {ref} from "vue";
 interface MainPageYAML {
   index: string;
   title: string;
@@ -27,13 +28,23 @@ const cubemixerData: MainPageYAML = cubemixerYAML;
 
 // const projectCrossingDataBase64: string = encodeBase64( 'public/data/project-crossing.yaml');
 
+// window.onload = () => {
+//   console.log('All resources on the page have been loaded. Home.vue');
+//   // 你的操作邏輯
+// };
+
+// const isFistLoadDone = ref(false);
+//
+// window.addEventListener('load', () => {
+//   isFistLoadDone.value = true;
+//   console.log('All resources on the page have been loaded. Home.vue');
+// }, false);
 </script>
 
 <template>
-  <LoadingPanel duration-second="3"/>
   <MainView/>
   <BigTitle title="PROJECT" style=""/>
-  <MainPageIntroProjectRight index="01" :title="cubemixerData.title" :img-src="cubemixerData.imgSrc" :intro="cubemixerData.intro" :link="cubemixerData.link" link-props="cubemixer/home" />
+  <MainPageIntroProjectRight index="01" :title="cubemixerData.title" :img-src="cubemixerData.imgSrc" :intro="cubemixerData.intro" :link="cubemixerData.link" link-props="cubemixer/home"/>
   <MainPageIntroProjectLeft index="02" :title="crossingData.title" :img-src="crossingData.imgSrc" :intro="crossingData.intro" :link="crossingData.link" link-props="crossing/home"/>
   <MainPageIntroProjectRight index="03" :title="gunshootData.title" :img-src="gunshootData.imgSrc" :intro="gunshootData.intro" :link="gunshootData.link" link-props="gunshoot/home"/>
   <MainPageIntroProjectLeft index="04" :title="wingwarData.title" :img-src="wingwarData.imgSrc" :intro="wingwarData.intro" :link="wingwarData.link" link-props="wingwar/home"/>

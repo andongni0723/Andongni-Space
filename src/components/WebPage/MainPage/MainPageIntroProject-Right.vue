@@ -20,6 +20,6 @@ const introFormat = props.intro;
 
 
 <template>
-  <PageComponent class="component" :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link" img-style=""
+  <PageComponent class="component" :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
                  :project-props="linkProps"/>
 </template>

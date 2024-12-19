@@ -11,6 +11,14 @@ const ClickProject = (projectName: string) => {
   store.commit('SET_BUTTON_CLICKED', true);
   router.push(`/project/${projectName}/all-project`);
 }
+
+// window.onload = () => {
+//   console.log('All resources on the page have been loaded. AllProject.vue');
+//   // 你的操作邏輯
+// };
+window.addEventListener('load', () => {
+  console.log('All resources on the page have been loaded. AllProject.vue');
+}, false);
 </script>
 
 <template>
