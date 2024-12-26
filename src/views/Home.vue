@@ -25,20 +25,6 @@ const crossingData: MainPageYAML = crossingYAML;
 const gunshootData: MainPageYAML = gunshootYAML;
 const wingwarData: MainPageYAML = wingwarYAML;
 const cubemixerData: MainPageYAML = cubemixerYAML;
-
-// const projectCrossingDataBase64: string = encodeBase64( 'public/data/project-crossing.yaml');
-
-// window.onload = () => {
-//   console.log('All resources on the page have been loaded. Home.vue');
-//   // 你的操作邏輯
-// };
-
-// const isFistLoadDone = ref(false);
-//
-// window.addEventListener('load', () => {
-//   isFistLoadDone.value = true;
-//   console.log('All resources on the page have been loaded. Home.vue');
-// }, false);
 </script>
 
 <template>
