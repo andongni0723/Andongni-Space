@@ -72,6 +72,7 @@ watch(
   align-items: center;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-color: var(--main-drak-black-color);
   opacity: 1;
   z-index: 1010;
