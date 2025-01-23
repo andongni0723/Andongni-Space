@@ -17,18 +17,21 @@ const paths: string[] = parsedJson.list;
 <template>
   <div class="about">
     <BigTitle title="ABOUT ME" style="overflow:hidden;"/>
-    <div class="intro">
-      <div class="description">
-        <FadeInObserver><p class="small-title">個人簡介</p></FadeInObserver>
-        <FadeInObserver><p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p></FadeInObserver>
+
+    <FadeInObserver>
+      <div class="intro">
+        <div class="description">
+          <p class="small-title">個人簡介</p>
+          <p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p>
+        </div>
+        <img src="/about-img/my-photo-1.jpg" alt="my-photo" class="my-photo">
       </div>
-      <img src="/about-img/my-photo-1.jpg" alt="my-photo" class="my-photo">
-    </div>
+    </FadeInObserver>
+
     <hr class="line">
 
     <div class="event-intro">
       <div class="event-description">
-
         <p class="small-title">特殊事蹟</p>
         <div class="thing" v-for="(data, index) in SpecialEventDataList">
           <FadeInObserver><div ref="fadeText" :key="index" class="name small-text fade-in ">{{data.title}}</div></FadeInObserver>
@@ -58,8 +61,6 @@ const paths: string[] = parsedJson.list;
                   <i v-else class="fa-solid fa-code fa-xl" style="color: #ffffff;"></i>
                 </div>
                 <div :key="index" class="name small-text "><p>{{data.skillName}}</p></div>
-                <!--<div :key="index" class="name small-text "><p>{{data.skillName}}</p></div>-->
-                <!--<div :key="index" class="name small-text "><FadeInObserver><p>{{data.skillName}}</p></FadeInObserver></div>-->
               </div>
             </div>
           </FadeInObserver>

@@ -114,7 +114,7 @@ export const AllSkillDataList: SkillGroup[] = [
         skillDataList: LearningSkillDataList
     },
     {
-        groupName: "想學習",
+        groupName: "計畫學習",
         skillDataList: WantToLearnSkillDataList
     }
 

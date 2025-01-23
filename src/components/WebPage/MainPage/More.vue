@@ -4,17 +4,21 @@ import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 </script>
 
 <template>
-<div class="more">
-  <div class="text-and-button">
-    <FadeInObserver><h1 class="title-text">VIEW ALL PROJECT</h1></FadeInObserver>
-    <Button class="go-button" style="" link="/all-project" text="所有專案" link-props=""/>
-  </div>
-  <div class="text-and-button reverse">
-    <FadeInObserver><h1 class="title-text">ABOUT ME</h1></FadeInObserver>
-    <Button class="go-button" style="" link="/about" text="關於我" link-props=""/>
-  </div>
-</div>
+  <FadeInObserver>
+    <div class="more">
+      <div class="text-and-button">
+        <h1 class="title-text">VIEW ALL PROJECT</h1>
+        <Button class="go-button" style="" link="/all-project" text="所有專案" link-props=""/>
+      </div>
+      <div class="text-and-button reverse">
+        <h1 class="title-text">ABOUT ME</h1>
+        <Button class="go-button" style="" link="/about" text="關於我" link-props=""/>
+      </div>
+    </div>
+  </FadeInObserver>
 </template>
+
+
 
 <style scoped>
 .more {

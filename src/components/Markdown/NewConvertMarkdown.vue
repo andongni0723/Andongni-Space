@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { marked } from 'marked'
 import { ref, computed, onMounted, defineProps} from 'vue'
+import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 
 interface Props {
   markdownPath: string
@@ -28,7 +29,9 @@ const output = computed(() => marked(data.value))
 
 <template>
   <div class="front"></div>
-  <div class="markdown-body" v-html="output"></div>
+  <FadeInObserver>
+    <div class="markdown-body" v-html="output"></div>
+  </FadeInObserver>
 </template>
 
 <style>

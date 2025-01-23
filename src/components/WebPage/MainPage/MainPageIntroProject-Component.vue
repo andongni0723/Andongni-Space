@@ -20,33 +20,36 @@ const introFormat = props.intro;
 
 </script>
 
-
 <template>
-  <div class="project-show">
-    <div class="project" :style="projectStyle">
-      <div class="index" :style="indexStyle">
-        <FadeInObserver><h1 class="title" >{{index}}</h1></FadeInObserver>
-      </div>
-      <div class="details">
-        <img class="detail-img" :src="imgSrc" :style="imgStyle" alt="project-img" >
-      </div>
-    </div>
-    <div class="intro">
-      <div class="name-and-button" >
-        <FadeInObserver><h1 class="big-title" >{{title}}</h1></FadeInObserver>
-        <FadeInObserver><Button style="" link="/project" text="查看" :link-props="projectProps"/></FadeInObserver>
-      </div>
-      <FadeInObserver>
-        <div class="text">
-          <p v-html="introFormat"/>
+  <section class="project-show">
+    <!-- 項目展示區 -->
+    <FadeInObserver>
+      <article class="project">
+        <div class="index">
+          <h1 class="title">{{ index }}</h1>
         </div>
-      </FadeInObserver>
-    </div>
-  </div>
-  <hr class="line">
+        <div class="details">
+          <img class="detail-img" :src="imgSrc" alt="project-img" />
+        </div>
+      </article>
+    </FadeInObserver>
+
+    <!-- 項目介紹區 -->
+    <FadeInObserver>
+      <aside class="intro">
+        <div class="name-and-button">
+          <h1 class="big-title">{{ title }}</h1>
+          <Button link="/project" text="查看" :link-props="projectProps" />
+        </div>
+        <div class="text">
+          <p v-html="introFormat" />
+        </div>
+      </aside>
+    </FadeInObserver>
+
+    <hr class="line" />
+  </section>
 </template>
-
-
 
 <style scoped>
 .project-show {

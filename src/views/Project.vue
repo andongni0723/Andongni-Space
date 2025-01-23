@@ -12,7 +12,7 @@ import {
   wingwar
 } from "../../public/data/ProjectDataManager";
 import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
-import MainPageIntroProjectRight from "@/components/WebPage/MainPage/MainPageIntroProject-Right.vue";
+import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 
 const router = useRouter();
 
@@ -94,27 +94,30 @@ console.log(props);
   </div>
 
   <!-- Project Introduction -->
-  <div class="intro">
-    <div class="description">
-      <p class="small-title">描述</p>
-      <p class="small-text">{{data.description}}</p>
-    </div>
-    <ResponsiveWatcher v-slot="rw">
-      <hr v-if="rw.width >= 600" class="vertical">
-      <hr v-else class="short-line">
-    </ResponsiveWatcher>
+  <FadeInObserver>
+    <div class="intro">
+      <div class="description">
+        <p class="small-title">描述</p>
+        <p class="small-text">{{data.description}}</p>
+      </div>
+      <ResponsiveWatcher v-slot="rw">
+        <hr v-if="rw.width >= 600" class="vertical">
+        <hr v-else class="short-line">
+      </ResponsiveWatcher>
 
-    <div class="type-and-date-flex">
-      <div class="type-and-date">
-        <p class="small-title">類型</p>
-        <p class="small-text">{{data.type}}</p>
-      </div>
-      <div class="type-and-date">
-        <p class="small-title">製作日期</p>
-        <p class="small-text">{{data.madeData}}</p>
+      <div class="type-and-date-flex">
+        <div class="type-and-date">
+          <p class="small-title">類型</p>
+          <p class="small-text">{{data.type}}</p>
+        </div>
+        <div class="type-and-date">
+          <p class="small-title">製作日期</p>
+          <p class="small-text">{{data.madeData}}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </FadeInObserver>
+
   <ResponsiveWatcher v-slot="rw">
     <hr v-if="rw.width >= 600" class="line">
     <hr v-else class="short-line">
