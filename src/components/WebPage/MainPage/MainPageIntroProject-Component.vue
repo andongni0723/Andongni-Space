@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineProps, computed } from 'vue';
 import Button from "@/components/WebPage/Main/Button.vue";
+import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 
 interface Props
 {
@@ -24,7 +25,7 @@ const introFormat = props.intro;
   <div class="project-show">
     <div class="project" :style="projectStyle">
       <div class="index" :style="indexStyle">
-        <h1 class="title" >{{index}}</h1>
+        <FadeInObserver><h1 class="title" >{{index}}</h1></FadeInObserver>
       </div>
       <div class="details">
         <img class="detail-img" :src="imgSrc" :style="imgStyle" alt="project-img" >
@@ -32,12 +33,14 @@ const introFormat = props.intro;
     </div>
     <div class="intro">
       <div class="name-and-button" >
-        <h1 class="big-title" >{{title}}</h1>
-        <Button style="" link="/project" text="查看" :link-props="projectProps"/>
+        <FadeInObserver><h1 class="big-title" >{{title}}</h1></FadeInObserver>
+        <FadeInObserver><Button style="" link="/project" text="查看" :link-props="projectProps"/></FadeInObserver>
       </div>
-      <div class="text">
-        <p v-html="introFormat"/>
-      </div>
+      <FadeInObserver>
+        <div class="text">
+          <p v-html="introFormat"/>
+        </div>
+      </FadeInObserver>
     </div>
   </div>
   <hr class="line">

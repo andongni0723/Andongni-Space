@@ -2,7 +2,7 @@ import {
     cppIconPath,
     csharpIconPath,
     flutterIconPath,
-    godotIconPath,
+    godotIconPath, pytorchIconPath,
     rustIconPath, swiftIconPath,
     typeScriptIconPath, ueIconPath,
     unityIconPath
@@ -38,6 +38,17 @@ export const SpecialEventDataList: EventData[] = [
     }
 ];
 
+export const ExperienceEventDataList: EventData[] = [
+    {
+        title: "7年 Unity遊戲開發經驗",
+        result: ""
+    },
+    {
+        title: "2年 前端開發經驗",
+        result: ""
+    },
+];
+
 export const SkilledSkillDataList: SkillData[] = [
     {
         iconPath: unityIconPath,
@@ -47,13 +58,13 @@ export const SkilledSkillDataList: SkillData[] = [
         iconPath: csharpIconPath,
         skillName: "C#"
     },
+];
+
+export const LearningSkillDataList: SkillData[] = [
     {
         iconPath: cppIconPath,
         skillName: "C++"
     },
-];
-
-export const LearningSkillDataList: SkillData[] = [
     {
         iconPath: typeScriptIconPath,
         skillName: "TypeScript"
@@ -70,21 +81,25 @@ export const LearningSkillDataList: SkillData[] = [
 
 export const WantToLearnSkillDataList: SkillData[] = [
     {
-        iconPath: ueIconPath,
-        skillName: "Unreal Engine"
+        iconPath: pytorchIconPath,
+        skillName: "PyTorch"
     },
-    {
-        iconPath: rustIconPath,
-        skillName: "Rust"
-    },
-    {
-        iconPath: flutterIconPath,
-        skillName: "Flutter"
-    },
-    {
-        iconPath: swiftIconPath,
-        skillName: "Swift"
-    },
+    // {
+    //     iconPath: ueIconPath,
+    //     skillName: "Unreal Engine"
+    // },
+    // {
+    //     iconPath: rustIconPath,
+    //     skillName: "Rust"
+    // },
+    // {
+    //     iconPath: flutterIconPath,
+    //     skillName: "Flutter"
+    // },
+    // {
+    //     iconPath: swiftIconPath,
+    //     skillName: "Swift"
+    // },
 ];
 
 

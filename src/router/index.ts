@@ -136,7 +136,7 @@ const checkResourceLoaded = () => {
             console.log('资源加载超时')
             completeResourceLoading()
         }
-    }, 1000);
+    }, 500);
 }
 
 // 完成资源加载的函数

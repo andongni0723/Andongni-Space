@@ -1,16 +1,16 @@
 <script setup lang="ts">
-
 import Button from "@/components/WebPage/Main/Button.vue";
+import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 </script>
 
 <template>
 <div class="more">
   <div class="text-and-button">
-    <h1 class="title-text">VIEW ALL PROJECT</h1>
+    <FadeInObserver><h1 class="title-text">VIEW ALL PROJECT</h1></FadeInObserver>
     <Button class="go-button" style="" link="/all-project" text="所有專案" link-props=""/>
   </div>
   <div class="text-and-button reverse">
-    <h1 class="title-text">ABOUT ME</h1>
+    <FadeInObserver><h1 class="title-text">ABOUT ME</h1></FadeInObserver>
     <Button class="go-button" style="" link="/about" text="關於我" link-props=""/>
   </div>
 </div>

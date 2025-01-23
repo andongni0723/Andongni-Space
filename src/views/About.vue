@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import BigTitle from "@/components/WebPage/Main/BigTitle.vue";
 import scrollingPathData from '../../public/data/scrolling-path.yaml'
-import ResponsiveWatcher from "@/components/Func/ResponsiveWatcher.vue";
-import {AllSkillDataList, SpecialEventDataList} from "../../public/data/AboutDataManager";
-import {ref} from "vue";
-import MarkdownRenderer from "@/components/Markdown/MarkdownRenderer.vue";
-import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
-import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
+import {AllSkillDataList, ExperienceEventDataList, SpecialEventDataList} from "../../public/data/AboutDataManager";
+import FadeInObserver from "@/components/Func/FadeInObserver.vue";
+// import {ref, onMounted} from "vue";
 
 interface ScrollingYAML {
   list: string[]
@@ -15,8 +12,6 @@ interface ScrollingYAML {
 const jsonString = JSON.stringify(scrollingPathData, null, 2);
 const parsedJson = JSON.parse(jsonString) as ScrollingYAML;
 const paths: string[] = parsedJson.list;
-const pathsRef = ref(paths);
-const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </script>
 
 <template>
@@ -24,8 +19,8 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
     <BigTitle title="ABOUT ME" style="overflow:hidden;"/>
     <div class="intro">
       <div class="description">
-        <p class="small-title">個人簡介</p>
-        <p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p>
+        <FadeInObserver><p class="small-title">個人簡介</p></FadeInObserver>
+        <FadeInObserver><p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p></FadeInObserver>
       </div>
       <img src="/about-img/my-photo-1.jpg" alt="my-photo" class="my-photo">
     </div>
@@ -33,10 +28,17 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 
     <div class="event-intro">
       <div class="event-description">
+
         <p class="small-title">特殊事蹟</p>
         <div class="thing" v-for="(data, index) in SpecialEventDataList">
-          <div :key="index" class="name small-text"><p>{{data.title}}</p></div>
-          <div :key="index" class="result small-text bold"><p>{{data.result}}</p></div>
+          <FadeInObserver><div ref="fadeText" :key="index" class="name small-text fade-in ">{{data.title}}</div></FadeInObserver>
+          <FadeInObserver><div ref="fadeText" :key="index" class="result small-text bold fade-in">{{data.result}}</div></FadeInObserver>
+        </div>
+        <div style="height: 50px"></div>
+        <p class="small-title">經歷</p>
+        <div class="thing" v-for="(data, index) in ExperienceEventDataList">
+          <FadeInObserver><div :key="index" class="name small-text"><p>{{data.title}}</p></div></FadeInObserver>
+          <FadeInObserver><div :key="index" class="result small-text bold"><p>{{data.result}}</p></div></FadeInObserver>
         </div>
       </div>
       <hr class="short-line">
@@ -47,25 +49,31 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
             <i class="fa-regular fa-circle-dot" style="color: #ffffff;"></i>
             <hr class="vertical">
           </div>
-
-          <div class="skill">
-            <p class="small-title">{{dataList.groupName}}</p>
-            <div class="skill-content" v-for="(data, index) in dataList.skillDataList">
-              <div class="skill-icon">
-                <svg v-if="data.iconPath != '' " role="img" viewBox="0 0 24 24" height="1.5em" xmlns="http://www.w3.org/2000/svg"><title></title><path :d="data.iconPath" fill="white"/></svg>
-                <i v-else class="fa-solid fa-code fa-xl" style="color: #ffffff;"></i>
+          <FadeInObserver>
+            <div class="skill">
+              <p class="small-title">{{dataList.groupName}}</p>
+              <div class="skill-content" v-for="(data, index) in dataList.skillDataList">
+                <div class="skill-icon">
+                  <svg v-if="data.iconPath != '' " class="fade-in" role="img" viewBox="0 0 24 24" height="1.5em" xmlns="http://www.w3.org/2000/svg"><title></title><path :d="data.iconPath" fill="white"/></svg>
+                  <i v-else class="fa-solid fa-code fa-xl" style="color: #ffffff;"></i>
+                </div>
+                <div :key="index" class="name small-text "><p>{{data.skillName}}</p></div>
+                <!--<div :key="index" class="name small-text "><p>{{data.skillName}}</p></div>-->
+                <!--<div :key="index" class="name small-text "><FadeInObserver><p>{{data.skillName}}</p></FadeInObserver></div>-->
               </div>
-              <div :key="index" class="name small-text"><p>{{data.skillName}}</p></div>
             </div>
-          </div>
+          </FadeInObserver>
+
         </div>
       </div>
     </div>
 
-    <div class="contact">
-      <p class="contact-text">Contact me by email </p>
-      <a class="email" href="mailto:0723@andongni.me">0723@andongni.me</a>
-    </div>
+    <FadeInObserver>
+      <div class="contact">
+        <p class="contact-text">Contact me by email </p>
+        <a class="email" href="mailto:dev@andongni.me">dev@andongni.me</a>
+      </div>
+    </FadeInObserver>
   </div>
 
 </template>
@@ -94,7 +102,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
-  padding: 5% 8%;
+  padding: 0 8% 5%;
   //gap: 20vh;
 }
 
@@ -119,7 +127,6 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
 .small-title {
@@ -128,6 +135,7 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   font-size: 1.3rem;
   color: var(--main-white-color);
   padding-bottom: 20px;
+  //padding-top: 50px;
 }
 
 .small-text {
