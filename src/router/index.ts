@@ -133,7 +133,7 @@ const checkResourceLoaded = () => {
     // 设置超时处理
     setTimeout(() => {
         if (!isResourceFullyLoaded.value) {
-            console.log('资源加载超时')
+            console.log('資源加載超時')
             completeResourceLoading()
         }
     }, 500);

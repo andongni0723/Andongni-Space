@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <style scoped>
 .main-view {
   position: relative;
-  height: calc(100vh - 3rem);
+  //height: calc(100vh - 3rem);
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 

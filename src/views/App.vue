@@ -15,16 +15,15 @@ const router = useRouter();
 
 watch(isRouteLoading, (newValue) => {
   if (newValue) {
-    // 路由开始加载时，可以执行一些初始化操作
-    console.log('路由开始加载')
+    // when route is loading
+    console.log('路由開始加載')
   }
 })
 
-// 监听资源完全加载状态
+// listen to the resource loading status
 watch(isResourceFullyLoaded, (newValue) => {
   if (newValue) {
-    console.log('资源已完全加载')
-    // 可以在这里执行一些资源加载完成后的操作
+    console.log('資源完全加載完成')
   }
 })
 
