@@ -1,23 +1,23 @@
 @font-face {
     font-family: "JetBrains Mono NL";
     src:
-        url("../font/JetBrainsMonoNL-SemiBold.ttf") format('truetype')
+        url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
 }
 @font-face {
     font-family: "JetBrains Mono";
     src:
-            url("../font/JetBrainsMonoNL-SemiBold.ttf") format('truetype')
+            url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
 }
 @font-face {
     font-family: "Impact";
     src:
-        url("../font/Impact.ttf") format('truetype')
+        url("../font/Impact.woff2") format('truetype')
 }
 
 @font-face {
     font-family: "bai jamjuree";
     src:
-        url("../font/BaiJamjuree-Regular.ttf") format('truetype');
+        url("../font/BaiJamjuree-Regular.woff2") format('truetype');
 }
 
 :root {
