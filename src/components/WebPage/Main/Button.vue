@@ -19,7 +19,10 @@ const props: Props = defineProps<Props>();
 </script>
 
 <template>
-  <router-link :to="{path: link + '/' + linkProps}" class="go-button" :style="style" @click="handleButtonClick">
+  <router-link :to="{path: link + '/' + linkProps}"
+               class="border-solid border border-black-light rounded-4xl text-white-main bg-transparent decoration-[none]
+               w-[150px] mx-[50px] my-[30px] p-[15px] flex align-center justify-center gap-10 transition duration-200
+               font-bold text-sm tracking-widest" :style="style" @click="handleButtonClick">
   <!--<router-link :to="{path: '/project/dd', params: {data: 'hi'} }" class="go-button" :style="style" @click="handleButtonClick">-->
     {{text}}
     <i class="fa-thin fa-arrow-right-long"></i>
@@ -31,7 +34,6 @@ const props: Props = defineProps<Props>();
   border: var(--main-light-black-color) solid 1px;
   border-radius: 30px;
   color: var(--main-white-color);
-  //background-color: var(--main-drak-black-color);
   background-color: transparent;
   text-decoration: none;
   width: 150px;

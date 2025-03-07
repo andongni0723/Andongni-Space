@@ -10,9 +10,9 @@ interface Props
   imgSrc: string;
   intro: string;
   link: string;
-  projectStyle: Record<string, string>;
-  indexStyle: Record<string, string>;
-  imgStyle: Record<string, string>;
+  projectStyle: string;
+  indexStyle: string;
+  imgStyle: string;
   projectProps: string;
 }
 const props = defineProps<Props>();
@@ -21,33 +21,33 @@ const introFormat = props.intro;
 </script>
 
 <template>
-  <section class="project-show">
+  <section class="bg-black-dark overflow-hidden max-sm:pl-32">
     <!-- 項目展示區 -->
     <FadeInObserver>
-      <article class="project">
-        <div class="index">
-          <h1 class="title">{{ index }}</h1>
+      <article class="flex max-sm:flex-col pt-[30px] pb-[30px] min-w-auto sm:gap-[80px] max-sm:gap-[2rem]" :class="projectStyle">
+        <div class="ml-[max(0px,calc((100%-980px)*0.5))]" :class="indexStyle">
+          <h1 class="font-impact text-white-main sm:text-5xl max-sm:text-4xl">{{ index }}</h1>
         </div>
-        <div class="details">
-          <img class="detail-img" :src="imgSrc" alt="project-img" />
+        <div class="w-full overflow-hidden">
+          <img class="object-cover max-sm:w-[340px] sm:h-[632px] max-sm:h-auto rounded-2xl" :src="imgSrc" :class="imgStyle" alt="project-img" />
         </div>
       </article>
     </FadeInObserver>
 
     <!-- 項目介紹區 -->
     <FadeInObserver>
-      <aside class="intro">
-        <div class="name-and-button">
-          <h1 class="big-title">{{ title }}</h1>
-          <Button link="/project" text="查看" :link-props="projectProps" />
+      <aside class="sm:pl-[max(20px,calc((100%-680px)*0.5))] max-sm:ml-0"> <!-- max-sm:p-0 -->
+        <div class="flex justify-items-start align-center w-auto max-sm:w-[340px] sm:py-32 max-sm:py-20 sm:px-52 max-sm:px-0">
+          <h1 class="font-impact text-white-main sm:text-7xl max-sm:text-5xl">{{ title }}</h1>
+          <Button class="max-xs:my-0 max-sm:mx-0 max-sm:!ml-32 max-sm:w-[130px]" link="/project" text="查看" :link-props="projectProps" />
         </div>
-        <div class="text">
+        <div class="text-white-main font-bai-jamjuree sm:text-lg max-sm:text-sm font-normal leading-28 whitespace-pre-wrap sm:pl-[50px] sm:max-w-[600px] max-sm:max-w-[340px] max-sm:p-0 ">
           <p v-html="introFormat" />
         </div>
       </aside>
     </FadeInObserver>
 
-    <hr class="line" />
+    <hr class="text-white-main max-w-screen mt-[100px]" />
   </section>
 </template>
 
@@ -104,7 +104,6 @@ const introFormat = props.intro;
 
 .name-and-button {
   display: flex;
-  //flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 500px;
@@ -177,7 +176,6 @@ const introFormat = props.intro;
   .text {
     padding: 0;
     font-size: 0.8rem; /* 當視窗寬度小於600px時，最小字體大小 */
-    //width: 340px;
     max-width: 340px;
   }
 }
@@ -189,8 +187,6 @@ const introFormat = props.intro;
     justify-content: left;
     align-items: flex-start;
     gap: 10px;
-    //width: 500px;
-    //padding: 30px 50px;
   }
 
   .go-button {
@@ -198,7 +194,6 @@ const introFormat = props.intro;
     width: 100px;
     height: 30px;
     padding: 5px;
-    //border-radius: 20px;
   }
 }
 

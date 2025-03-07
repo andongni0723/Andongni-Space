@@ -1,23 +1,17 @@
-@font-face {
-    font-family: "JetBrains Mono NL";
-    src:
-        url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
-}
-@font-face {
-    font-family: "JetBrains Mono";
-    src:
-            url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
-}
-@font-face {
-    font-family: "Impact";
-    src:
-        url("../font/Impact.woff2") format('truetype')
-}
+@import "tailwindcss";
 
-@font-face {
-    font-family: "bai jamjuree";
-    src:
-        url("../font/BaiJamjuree-Regular.woff2") format('truetype');
+@theme {
+    --font-impact: "Impact", "JetBrains Mono", sans-serif;
+    --font-bai-jamjuree: "bai jamjuree", "JetBrains Mono NL", sans-serif;
+    --font-jetbrains: "JetBrains Mono", sans-serif;
+    --color-white-main: rgb(222, 220, 217);
+    --color-black-light: rgb(34, 36, 37);
+    --color-black-dark: rgb(12, 12, 13);
+    --color-black-dark-text: #313131;
+    --color-blue-link: #81b3ff;
+    --spacing: 1px;
+
+    --breakpoint-xs: 30rem;
 }
 
 :root {

@@ -37,17 +37,8 @@ watch(isResourceFullyLoaded, (newValue) => {
   <transition name="fade-content" mode="out-in">
     <router-view />
   </transition>
-
   <Footer/>
 </template>
 
 <style scoped>
-
-.fade-content-enter-active, .fade-content-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-content-enter-from, .fade-content-leave-to {
-  opacity: 0;
-}
 </style>

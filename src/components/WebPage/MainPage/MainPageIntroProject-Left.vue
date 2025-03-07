@@ -19,22 +19,20 @@ const props = defineProps<Props>();
 const introFormat = props.intro;
 </script>
 
-
 <template>
   <ResponsiveWatcher v-slot="rw">
     <PageComponent v-if="rw.width >= 600"
                    :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
-                   project-style="flex-direction: row-reverse"
-                   index-style="margin-right: max(0px, calc((100% - 980px) * 0.5)); margin-left: 0;"
-                   img-style=" float: right"
+                   project-style="sm:flex-row-reverse"
+                   index-style="sm:mr-[max(0px,calc((100%-980px)*0.5))] sm:ml-0"
+                   img-style="sm:float-right"
                    :project-props="linkProps"/>
 
     <PageComponent v-else
                    :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
-                   project-style="flex-direction: column;"
-                   index-style="margin: 0;"
-                   img-style="display: block;
-                              float: none;"
+                   project-style="max-sm:flex-column"
+                   index-style="max-sm:m-0"
+                   img-style="max-sm:block max-sm:float-none"
                    :project-props="linkProps"/>
   </ResponsiveWatcher>
 

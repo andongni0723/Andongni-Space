@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "JetBrains Mono NL";
+    src:
+            url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    src:
+            url("../font/JetBrainsMonoNL-SemiBold.woff2") format('truetype')
+}
+@font-face {
+    font-family: "Impact";
+    src:
+            url("../font/Impact.woff2") format('truetype')
+}
+
+@font-face {
+    font-family: "bai jamjuree";
+    src:
+            url("../font/BaiJamjuree-Regular.woff2") format('truetype');
+}
