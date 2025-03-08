@@ -148,7 +148,7 @@ console.log(props);
 </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .project {
   padding-top: 100px;
   overflow: hidden;
@@ -158,7 +158,7 @@ console.log(props);
 
 .title-group {
   display: flex;
-  //align-items: flex-end;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -212,7 +212,7 @@ console.log(props);
 
 .project-picture {
   width: 92%;
-  //max-width: 300px;
+  max-width: 300px;
   height: auto;
   margin: 4%;
   border-radius: 20px;
@@ -228,8 +228,8 @@ console.log(props);
   display: flex;
   flex-direction: column;
   width: 30%;
-  max-width: 300px;
-  padding: 0 11%;
+  /*max-width: 300px;*/
+  padding: 0 3%;
 }
 
 .type-and-date-flex
@@ -238,7 +238,7 @@ console.log(props);
   flex-direction: column;
   width: 30%;
   max-width: 300px;
-  padding: 0 11%;
+  padding: 0 3%;
   gap: 45px;
 }
 

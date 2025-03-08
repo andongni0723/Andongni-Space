@@ -51,8 +51,6 @@ const navigateTo = (path: string) => {
     <ResponsiveWatcher v-slot="rw">
 
       <div v-if="rw.width >= 600" class="right-side">
-        <!--<router-link to="/about" class="nav-button">ABOUT</router-link>-->
-        <!--<router-link to="/all-project" class="nav-button">PROJECT</router-link>-->
         <button @click="navigateTo('/about')" class="nav-button">ABOUT</button>
         <button @click="navigateTo('/all-project')" class="nav-button">PROJECT</button>
         <Icon icon-src="fa-brands fa-facebook fa-xl" link="https://www.facebook.com/profile.php?id=100015788080240"/>
