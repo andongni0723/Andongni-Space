@@ -11,9 +11,9 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-<div class="big-title">
-  <h1 class="title-text" :style="style">{{title}}</h1>
-  <hr class="line">
+<div class="bg-black-dark">
+  <h1 class="font-impact text-white-main italic text-6xl sm:text-7xl py-[30px] pl-[8%] pl-30px overflow-hidden text-nowrap" :style="style">{{title}}</h1>
+  <hr class="text-white max-w-screen m-0">
 </div>
 </template>
 

@@ -207,12 +207,13 @@ console.log(props);
   padding: 2%;
   justify-content: center;
   align-items: center;
+  justify-items: center;
   margin-bottom: 50px;
 }
 
 .project-picture {
   width: 92%;
-  max-width: 300px;
+  //max-width: 300px;
   height: auto;
   margin: 4%;
   border-radius: 20px;

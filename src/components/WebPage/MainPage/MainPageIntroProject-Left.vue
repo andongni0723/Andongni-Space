@@ -24,7 +24,7 @@ const introFormat = props.intro;
     <PageComponent v-if="rw.width >= 600"
                    :index="index" :title="title" :imgSrc="imgSrc" :intro="introFormat" :link="link"
                    project-style="sm:flex-row-reverse"
-                   index-style="sm:mr-[max(0px,calc((100%-980px)*0.5))] sm:ml-0"
+                   index-style="sm:mr-[8%] sm:ml-0"
                    img-style="sm:float-right"
                    :project-props="linkProps"/>
 

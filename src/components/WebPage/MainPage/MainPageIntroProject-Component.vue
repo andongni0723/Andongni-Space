@@ -25,7 +25,7 @@ const introFormat = props.intro;
     <!-- 項目展示區 -->
     <FadeInObserver>
       <article class="flex max-sm:flex-col pt-[30px] pb-[30px] min-w-auto sm:gap-[80px] max-sm:gap-[2rem]" :class="projectStyle">
-        <div class="ml-[max(0px,calc((100%-980px)*0.5))]" :class="indexStyle">
+        <div class="sm:ml-[8%]" :class="indexStyle">
           <h1 class="font-impact text-white-main sm:text-5xl max-sm:text-4xl">{{ index }}</h1>
         </div>
         <div class="sm:w-full w-fit overflow-hidden">

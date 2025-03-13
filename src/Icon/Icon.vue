@@ -14,12 +14,11 @@ const props = defineProps<Props>();
 </template>
 
 <style scoped>
-a::before, a:hover{
-  justify-content: center;
-  align-items: center;
-}
 a, a:hover
 {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
   text-decoration: none;
 }
 </style>
