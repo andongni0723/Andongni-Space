@@ -5,21 +5,6 @@ interface ScrollingYAML {
   list: string[]
 }
 
-// const imagePaths: string[] = [
-//   "https://r2.andongni.me/scrolling-img/scrolling4.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling5.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling3.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling8.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling10.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling2.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling1.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling11.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling7.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling9.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling12.png",
-//   "https://r2.andongni.me/scrolling-img/scrolling6.png",
-// ];
-
 const imagePaths: string[] = [
   "/scrolling-img/scrolling4.webp",
   "/scrolling-img/scrolling5.webp",
@@ -35,19 +20,12 @@ const imagePaths: string[] = [
   "/scrolling-img/scrolling6.webp",
 ];
 
-
-
-
-// const jsonString = JSON.stringify(scrollingPathData, null, 2);
-// const parsedJson = JSON.parse(jsonString) as ScrollingYAML;
-// const paths: string[] = parsedJson.list;
-// const pathsRef = ref(paths);
 const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
 </script>
 
 <template>
-  <div class="about">
-    <div class="picture-wall">
+  <div class="flex flex-col absolute t-0 l-0">
+    <div class="flex gap-10">
       <MainViewPicture
           v-for="(path, index) in imagePaths"
           :key="index"
@@ -104,14 +82,14 @@ const reverseIndexes = Array.from({ length: 12 }, (_, i) => 12 - i);
   }
 }
 
-@keyframes scrolling-left {
-  0% {
-    transform: translateX(-200px)
-  }
+@keyframes scrolling-right {
+  from { transform: translateX(-1300px); }
+  to { transform: translateX(0); }
+}
 
-  100% {
-    transform: translateX(-1300px);
-  }
+@keyframes scrolling-left {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(-1300px); }
 }
 
 @media (max-width: 500px) {
