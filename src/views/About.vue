@@ -24,7 +24,8 @@ const paths: string[] = parsedJson.list;
           <p class="small-title">個人簡介</p>
           <p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p>
         </div>
-        <img src="/about-img/my-photo-1.jpg" alt="my-photo" class="my-photo">
+        <img src="/logo.png" alt="my-photo" class="my-photo">
+
       </div>
     </FadeInObserver>
 
@@ -72,7 +73,7 @@ const paths: string[] = parsedJson.list;
     <FadeInObserver>
       <div class="contact">
         <p class="contact-text">Contact me by email </p>
-        <a class="email" href="mailto:dev@andongni.me">dev@andongni.me</a>
+        <a class="email underline" href="mailto:dev@andongni.me">dev@andongni.me</a>
       </div>
     </FadeInObserver>
   </div>
@@ -157,6 +158,7 @@ const paths: string[] = parsedJson.list;
   width: 30%;
   max-width: 300px;
   border-radius: 10%;
+  filter: brightness(50%);
   border: var(--main-light-black-color) solid 1px;
 }
 

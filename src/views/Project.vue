@@ -71,267 +71,75 @@ console.log(props);
 </script>
 
 <template>
-<div class="project">
+<div class="w-full h-full pt-[100px] overflow-hidden">
 
   <!-- Project Title / Game Name -->
-  <div class="big-title">
-    <div class="title-group">
-      <h1 class="title-text">{{data.projectName}}</h1>
+  <div>
+    <div class="max-w-[980px] w-[80%] flex flex-col items-start justify-between flex-wrap sm:!mx-auto mx-[10%] pb-[50px]">
+      <h1 class="font-impact text-6xl sm:text-7xl text-white-main pt-[30px]">{{data.projectName}}</h1>
 
       <!-- Project Github Path ( icon and text ) -->
-      <div class="github-group">
+      <div class="flex gap-10 items-center mt-[50px] mb-8">
         <ResponsiveWatcher v-slot="rw">
           <div v-if="rw.width >= 600">
-            <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i></div>
+            <i class="fa-brands fa-github fa-2xl text-white"></i></div>
           <div v-else>
-            <i class="fa-brands fa-github fa-xl" style="color: #ffffff;"></i></div>
+            <i class="fa-brands fa-github fa-xl text-white"></i></div>
         </ResponsiveWatcher>
-        <a class="github-link" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
+        <a class="font-jetbrains text-white-main text-sm sm:text-2xl under" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
           andongni0723/{{data.projectGitHubName}}</a>
       </div>
     </div>
-    <hr class="line">
+    <hr class="w-screen text-white">
   </div>
 
   <!-- Project Introduction -->
   <FadeInObserver>
-    <div class="intro">
-      <div class="description">
-        <p class="small-title">描述</p>
-        <p class="small-text">{{data.description}}</p>
+    <div class="flex sm:flex-row flex-col flex-nowrap justify-center items-center sm:py-[50px] p-0">
+      <div class="py-[10%] w-[80%] sm:w-[40%] max-w-[500px] sm:pr-[3%]">
+        <p class="font-bai-jamjuree text-lg text-white-main pb-20">描述</p>
+        <p class="font-bai-jamjuree text-sm text-white-main tracking-wide">{{data.description}}</p>
       </div>
       <ResponsiveWatcher v-slot="rw">
-        <hr v-if="rw.width >= 600" class="vertical">
-        <hr v-else class="short-line">
+        <hr v-if="rw.width >= 640" class=" w-1 h-[200px] text-white m-0 border-[0.5px]">
+        <hr v-else class="max-w-[500px] w-[80%]">
       </ResponsiveWatcher>
 
-      <div class="type-and-date-flex">
-        <div class="type-and-date">
-          <p class="small-title">類型</p>
-          <p class="small-text">{{data.type}}</p>
+      <div class="flex flex-col gap-44 py-[10%] w-[80%] sm:w-[40%] max-w-[500px] sm:pl-[3%]">
+        <div>
+          <p class="font-bai-jamjuree text-lg text-white-main pb-20">類型</p>
+          <p class="font-bai-jamjuree text-sm text-white-main tracking-wide">{{data.type}}</p>
         </div>
-        <div class="type-and-date">
-          <p class="small-title">製作日期</p>
-          <p class="small-text">{{data.madeData}}</p>
+        <div>
+          <p class="font-bai-jamjuree text-lg text-white-main pb-20">製作日期</p>
+          <p class="font-bai-jamjuree text-sm text-white-main tracking-wide">{{data.madeData}}</p>
         </div>
       </div>
     </div>
   </FadeInObserver>
 
   <ResponsiveWatcher v-slot="rw">
-    <hr v-if="rw.width >= 600" class="line">
-    <hr v-else class="short-line">
+    <hr v-if="rw.width >= 640" class="text-white w-screen">
   </ResponsiveWatcher>
 
   <!-- Project Github Readme (markdown) -->
   <NewConvertMarkdown :markdown-path="data.readmePath"/>
 
   <!-- Game Photo-->
-  <div class="project-picture-grid">
-    <img v-for="(path, index) in data.projectImg" class="project-picture" :src="path" :key="index" alt="" >
+  <div class="flex sm:grid sm: grid-cols-2 flex-col justify-center items-center mb-[50px] p-[5%] ">
+    <img v-for="(path, index) in data.projectImg" class="w-[90%] h-auto m-[4%] rounded-lg sm:rounded-3xl" :src="path" :key="index" alt="" >
   </div>
 
-  <ResponsiveWatcher v-slot="rw">
-    <BigTitle v-if="rw.width >= 600" title="Learning Process" style="padding-left: 2%;"/>
-    <BigTitle v-else title="Learning Process"/>
-  </ResponsiveWatcher>
+  <BigTitle title="Learning Process"/>
 
   <!-- Learning Process Photo -->
-  <div class="project-study-flex">
-    <img v-for="(path, index) in data.projectStudyImg" class="project-picture" :src="path" :key="index" alt="" >
+  <div class="flex flex-col sm:p-[2%] p-[5%]">
+    <img v-for="(path, index) in data.projectStudyImg" class="w-[90%] h-auto m-[4%] sm:rounded-3xl rounded-lg" :src="path" :key="index" alt="" >
   </div>
 
   <!-- Back Button -->
-  <div class="back-button-group">
+  <div class="flex justify-center items-center pb-[50px]">
   <Button style="" @click="router.go(-1)" text="返回" link-props=""/>
   </div>
 </div>
 </template>
-
-<style scoped lang="css">
-.project {
-  padding-top: 100px;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
-.title-group {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 11% 50px 11%;
-}
-
-.title-text {
-  font-family: "Impact", "JetBrains Mono NL", "bai jamjuree", sans-serif;
-  font-style: normal;
-  font-size: 5rem;
-  color: var(--main-white-color);
-  padding-top: 30px;
-  margin-left: max(0px, calc((100% - 980px) * 0.5));
-}
-
-.intro {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-}
-
-
-.github-group {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 50px;
-  margin-left: max(0px, calc((100% - 980px) / 2));
-  margin-bottom: 8px;
-}
-
-.github-link {
-  font-family: "JetBrains Mono NL", sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: var(--main-white-color);
-  text-decoration: none;
-}
-
-.project-picture-grid
-{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 2%;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 50px;
-}
-
-.project-picture {
-  width: 92%;
-  //max-width: 300px;
-  height: auto;
-  margin: 4%;
-  border-radius: 20px;
-}
-
-.project-study-flex {
-  display: flex;
-  flex-direction: column;
-  padding: 2%;
-}
-
-.description{
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  /*max-width: 300px;*/
-  padding: 0 3%;
-}
-
-.type-and-date-flex
-{
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  max-width: 300px;
-  padding: 0 3%;
-  gap: 45px;
-}
-
-.small-title {
-  font-family: "bai jamjuree", sans-serif;
-  font-weight: 500;
-  font-size: 1.2rem;
-  color: var(--main-white-color);
-  padding-bottom: 20px;
-}
-
-.small-text {
-  font-family: "bai jamjuree", sans-serif;
-  color: var(--main-white-color);
-  font-weight: 300;
-  letter-spacing: 0.375pt;
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-.line {
-  color: white;
-  width: 100vw;
-  margin: 0;
-}
-
-.short-line {
-  max-width: 500px;
-  width: 80%;
-}
-
-.vertical {
-  height: 200px;
-  width: 0.2vw;
-  color: var(--main-white-color);
-  margin: 0;
-  border-width:0;
-  background-color: var(--main-white-color);
-}
-
-.back-button-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 50px;
-}
-
-@media (max-width: 600px) {
-  .intro {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .title-text {
-    font-size: 4rem;
-  }
-
-  .github-link {
-    font-size: 1rem;
-  }
-
-  .description {
-    padding: 10% 0;
-    width: 80%;
-    max-width: 500px;
-  }
-
-  .type-and-date-flex {
-    padding: 10% 0;
-    width: 80%;
-    max-width: 500px;
-  }
-
-  .project-picture-grid
-  {
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-  }
-
-  .project-picture {
-    border-radius: 10px;
-  }
-
-  .project-study-flex {
-    padding: 5%;
-  }
-}
-
-@media (max-width: 500px) {
-  .github-link {
-    font-size: 0.8rem;
-  }
-}
-</style>

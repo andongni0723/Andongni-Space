@@ -29,7 +29,7 @@ import {ref} from "vue";
       </div>
     </div>
     <ResponsiveWatcher v-slot="rw">
-      <div v-if="rw.width >= 640" class="flex items-center gap-16 overflow-hidden">
+      <div v-if="rw.width >= 640" class="flex items-center gap-16">
         <a href="https://www.facebook.com/profile.php?id=100015788080240" class="fa-brands fa-facebook fa-xl text-white"></a>
         <a href="https://space.bilibili.com/543329750" class="fa-brands fa-bilibili fa-xl text-white"></a>
         <a href="https://github.com/andongni0723" class="fa-brands fa-github fa-xl text-white"></a>

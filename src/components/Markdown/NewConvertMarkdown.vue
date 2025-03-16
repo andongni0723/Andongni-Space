@@ -28,7 +28,6 @@ const output = computed(() => marked(data.value))
 </script>
 
 <template>
-  <div class="front"></div>
   <FadeInObserver>
     <div class="markdown-body" v-html="output"></div>
   </FadeInObserver>

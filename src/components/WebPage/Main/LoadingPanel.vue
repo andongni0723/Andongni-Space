@@ -23,7 +23,7 @@ const loadingDone = () => {
     isAnimation.value = true;
     setTimeout(() => {
       isAnimation.value = false;
-    }, 1000);
+    }, 300);
   }, 1000);
 };
 
@@ -44,83 +44,19 @@ watch(
       }
     }
 );
-
-
-
 </script>
 
 <template>
-  <div v-show="isPanelLoading || isAnimation" :class="{'panel': true, 'panel-close': isAnimation}">
-    <div class="loading-content">
-      <div class="logo">
-        <img class="andongni-logo" src="/andongni_game_white_.svg" alt="andongni logo" />
+  <div v-show="isPanelLoading || isAnimation"
+       class="fixed flex justify-center items-center w-screen h-dvh bg-black-dark z-[1010]"
+       :class="{'animate-fade-out': isAnimation}">
+    <div class="flex flex-col justify-center items-center">
+      <div class="pr-14">
+        <img class="w-[300px] animate-fade-in" src="/andongni_game_white_.svg" alt="andongni logo" />
       </div>
-      <div class="loading-bar">
-        <img class="spinner" src="/spinner.svg" alt="spinner"/>
+      <div class="absolute bottom-0 mb-[5vh]">
+        <img class="w-40 animate-spin" src="/spinner.svg" alt="spinner"/>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-
-
-.panel {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  background-color: var(--main-drak-black-color);
-  opacity: 1;
-  z-index: 1010;
-}
-
-.panel-close {
-  animation: fadeOut 1s forwards;
-}
-@keyframes fadeOut {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-
-.loading-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  padding-right: 15px;
-}
-
-.andongni-logo {
-  width: 300px;
-  opacity: 0;
-  animation: fadeIn 0.3s forwards;
-}
-@keyframes fadeIn {
-  to {opacity: 1;}
-}
-
-
-.loading-bar {
-  position: absolute;
-  bottom: 0;
-
-  margin-bottom: 5vh;
-}
-
-.spinner {
-  width: 40px;
-  animation: rotateSpinner 1s linear infinite;
-}
-
-@keyframes rotateSpinner {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
-}
-</style>
