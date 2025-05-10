@@ -15,12 +15,12 @@ const paths: string[] = parsedJson.list;
 </script>
 
 <template>
-  <div class="about">
-    <BigTitle title="ABOUT ME" style="overflow:hidden;"/>
+  <div class="pt-[100px] overflow-hidden w-full h-full bg-black-dark">
+    <BigTitle title="ABOUT ME" class="overflow-hidden"/>
 
     <FadeInObserver>
-      <div class="intro">
-        <div class="description">
+      <div class="flex max-md:flex-row-reverse flex-nowrap md:justify-between justify-around  items-center py-[5%] px-[8%] h-[40%]">
+        <div class="flex flex-col md:w-[40%] w-[60%] md:max-w-[500px] max-w-[200px] gap-32">
           <p class="small-title">個人簡介</p>
           <p class="small-text">我是沈奕瑋，興趣和專長是程式設計、遊戲開發，在面對自己擅長的話題時會踴躍發言，反之則會因為缺乏自信心而少說話。平時對自己的日常有規劃，如果遇到意外會讓心情變差。</p>
         </div>
@@ -33,7 +33,7 @@ const paths: string[] = parsedJson.list;
 
     <div class="event-intro">
       <div class="event-description">
-        <p class="small-title">特殊事蹟</p>
+        <p class="font-bai-jamjuree font-semibold text-xl text-white-main pb-20">特殊事蹟</p>
         <div class="thing" v-for="(data, index) in SpecialEventDataList">
           <FadeInObserver><div ref="fadeText" :key="index" class="name small-text fade-in ">{{data.title}}</div></FadeInObserver>
           <FadeInObserver><div ref="fadeText" :key="index" class="result small-text bold fade-in">{{data.result}}</div></FadeInObserver>
@@ -81,6 +81,12 @@ const paths: string[] = parsedJson.list;
 </template>
 
 <style scoped>
+/*
+.small-title {
+  @reference font-bai-jamjuree font-semibold text-xl text-white-main pb-20;
+}
+
+ */
 .about {
   padding-top: 100px;
   overflow: hidden;
@@ -94,7 +100,6 @@ const paths: string[] = parsedJson.list;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  //padding: 50px 0;
   padding: 5% 8%;
   height: 40%;
 }
@@ -131,14 +136,15 @@ const paths: string[] = parsedJson.list;
   align-items: center;
 }
 
+/*
 .small-title {
   font-family: "bai jamjuree", sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
   color: var(--main-white-color);
   padding-bottom: 20px;
-  //padding-top: 50px;
 }
+ */
 
 .small-text {
   font-family: "bai jamjuree", sans-serif;

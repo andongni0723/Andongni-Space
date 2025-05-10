@@ -29,10 +29,6 @@ export const SpecialEventDataList: EventData[] = [
         result: "第五名"
     },
     {
-        title: "113普通型高級中等學校數理及資訊學科能力競賽",
-        result: "參加資格"
-    },
-    {
         title: "APCS大學程式設計先修檢測",
         result: "觀念4級分 實作3級分"
     }
