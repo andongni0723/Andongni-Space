@@ -20,9 +20,11 @@ window.addEventListener('load', () => {
 <template>
   <div class="py-[50px]">
     <div class="sm:grid sm:grid-cols-2 flex flex-col gap-20 p-[5%] sm:p-[2%] justify-center items-center mb-[50px]">
-      <div class="h-auto flex flex-col justify-center items-center rounded-3xl m-[4%] duration-300 hover:scale-110" v-for="(project, index) in AllProject">
+      <div class="h-auto flex flex-col justify-center items-center rounded-3xl m-[4%] duration-300 hover:scale-110"
+           v-for="(project, index) in AllProject">
         <div class="p-16">
-          <img  class=" h-auto rounded-lg sm:rounded-3xl object-cover border-solid border-2 border-black-light" :src="project.projectImg[0]" @click="ClickProject(project.projectID)" :key="index" alt="" >
+          <img class=" h-auto rounded-lg sm:rounded-3xl object-cover border-solid border-2 border-black-light"
+               :src="project.projectImg[0]" @click="ClickProject(project.projectID)" :key="index" alt="" >
           <p class="font-impact text-3xl text-white-main pt-20">{{project.projectName}}</p>
         </div>
       </div>
