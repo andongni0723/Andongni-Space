@@ -8,11 +8,12 @@ import {
   cubemixerData,
   docardData,
   gunshootData,
-  ProjectData,
+  ProjectData, tankwarData,
   wingwar
 } from "../../public/data/ProjectDataManager";
 import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
 import FadeInObserver from "@/components/Func/FadeInObserver.vue";
+import {onMounted} from "vue";
 
 const router = useRouter();
 
@@ -27,8 +28,18 @@ let data: ProjectData = {
   projectGitHubName: "", projectGithubLink: "", description: "", madeData: "", readmePath: "", projectImg: [], projectName: "",projectID: "", projectStudyImg: [], type: ""
 }
 
+onMounted(() => {
+  if (props.dataID === "lexicardio") {
+    window.location.href = "https://lexicardio.andongni.me";
+  }
+});
+
 switch (props.dataID)
 {
+  case "tankwar":
+    data = tankwarData;
+    break;
+
   case "cubemixer":
     data = cubemixerData;
     break;
@@ -47,6 +58,10 @@ switch (props.dataID)
 
   case "docard":
     data = docardData;
+    break;
+
+  case "lexicardio":
+    router.push('/');
     break;
 
   default:

@@ -5,7 +5,7 @@ import FadeInObserver from "@/components/Func/FadeInObserver.vue";
 
 <template>
   <FadeInObserver>
-    <div class="more">
+    <div class="overflow-hidden">
       <div class="text-and-button">
         <h1 class="title-text">VIEW ALL PROJECT</h1>
         <Button class="go-button" style="" link="/all-project" text="所有專案" link-props=""/>

@@ -12,6 +12,52 @@ export interface ProjectData
     projectStudyImg: string[]
 }
 
+export const lexicardioData: ProjectData = {
+    projectName: "Lexicardio",
+    projectID: "lexicardio",
+    projectGithubLink: "https://github.com/andongni0723/Unity_TankWar-Assault",
+    projectGitHubName: "Unity_TankWar-Assault",
+    description: "",
+    type: "Application",
+    madeData: "2025/5",
+    readmePath: "",
+    projectImg: ["/main-page-img/lexicardio.webp"],
+    projectStudyImg: [],
+}
+
+export const tankwarData: ProjectData = {
+    projectName: "TankWar:Assault",
+    projectID: "tankwar",
+    projectGithubLink: "https://github.com/andongni0723/Unity_TankWar-Assault",
+    projectGitHubName: "Unity_TankWar-Assault",
+    description: "This is a multiplayer tank combat project supporting up to 20 concurrent players.\n" +
+        "Networking and matchmaking are implemented with Unity Netcode for GameObjects.\n" +
+        "Players select a tank, equip different weapons and skills, and engage in fast-paced matches.\n" +
+        "The game is cross-platform and supports both desktop and mobile devices.\n",
+    type: "3D第三人稱射擊遊戲",
+    madeData: "2025/2",
+    readmePath: "/project-data/tankwar/tankwar-readme-en.md",
+    projectImg: [
+        "/main-page-img/tankwar.webp",
+        "/project-data/tankwar/project/project-img-tankwar-01.webp",
+        "/project-data/tankwar/project/project-img-tankwar-02.webp",
+        "/project-data/tankwar/project/project-img-tankwar-03.webp",
+        "/project-data/tankwar/project/project-img-tankwar-04.webp",
+        "/project-data/tankwar/project/project-img-tankwar-05.webp",
+        "/project-data/tankwar/project/project-img-tankwar-06.webp",
+    ],
+    projectStudyImg: [
+        "/project-data/tankwar/project-study/project-study-tankwar-01.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-02.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-03.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-04.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-05.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-06.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-07.webp",
+        "/project-data/tankwar/project-study/project-study-tankwar-08.webp",
+    ],
+}
+
 export const cubemixerData: ProjectData = {
     projectName: "CubeMixer",
     projectID: "cubemixer",
@@ -199,6 +245,8 @@ export const docardData: ProjectData = {
 }
 
 export const AllProject: ProjectData[] = [
+    lexicardioData,
+    tankwarData,
     cubemixerData,
     crossingData,
     gunshootData,

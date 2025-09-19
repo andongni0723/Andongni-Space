@@ -1,0 +1,6 @@
+index: ""
+title: TankWar
+imgSrc: "/main-page-img/tankwar.webp"
+intro: |
+  This is a multiplayer tank combat project supporting up to 20 concurrent players. Networking and matchmaking are implemented with Unity Netcode for GameObjects. Players select a tank, equip different weapons and skills, and engage in fast-paced matches. The game is cross-platform and supports both desktop and mobile devices.
+link: ""
