@@ -40,7 +40,7 @@ export const ExperienceEventDataList: EventData[] = [
         result: ""
     },
     {
-        title: "2年 前端開發經驗",
+        title: "1年 前端開發經驗",
         result: ""
     },
 ];
