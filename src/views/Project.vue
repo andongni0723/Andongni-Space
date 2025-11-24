@@ -30,7 +30,7 @@ let data: ProjectData = {
 
 onMounted(() => {
   if (props.dataID === "lexicardio") {
-    window.location.href = "https://lexicardio.andongni.me";
+    window.location.href = "https://lexicardio.andongni.com";
   }
 });
 
