@@ -21,15 +21,15 @@ const introFormat = props.intro;
 </script>
 
 <template>
-  <section class="bg-black-dark overflow-hidden max-sm:w-[80dvw]">
+  <section class="bg-black-dark overflow-x-hidden max-sm:w-[80dvw] sm:w-full">
     <!-- 項目展示區 -->
     <FadeInObserver>
-      <article class="flex max-sm:flex-col pt-[30px] pb-[30px] min-w-auto sm:gap-[80px] max-sm:gap-[2rem]" :class="projectStyle">
+      <article class="flex w-full max-w-full max-sm:flex-col pt-[30px] pb-[30px] min-w-auto sm:gap-[80px] max-sm:gap-[2rem]" :class="projectStyle">
         <div class="sm:ml-[8%] sm:mr-[8%]" :class="indexStyle">
           <h1 class="font-impact text-white-main sm:text-5xl max-sm:text-4xl">{{ index }}</h1>
         </div>
-        <div class="sm:w-full w-fit overflow-hidden">
-          <img class="object-cover max-sm:w-screen sm:h-[632px] max-sm:h-auto rounded-2xl" :src="imgSrc" :class="imgStyle" alt="project-img" />
+        <div class="w-full max-w-full min-w-0 overflow-hidden">
+          <img class="w-full max-w-full object-cover sm:h-[632px] max-sm:h-auto rounded-2xl" :src="imgSrc" :class="imgStyle" alt="project-img" />
         </div>
       </article>
     </FadeInObserver>
@@ -47,6 +47,6 @@ const introFormat = props.intro;
       </aside>
     </FadeInObserver>
 
-    <hr class="text-white-main w-screen mt-[100px]" />
+    <hr class="text-white-main w-full mt-[100px]" />
   </section>
 </template>
