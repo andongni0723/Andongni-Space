@@ -1,8 +1,8 @@
 # Lexicardio Privacy Policy
 
-Last updated: March 5, 2026
+Last updated: March 6, 2026
 
-Lexicardio is provided by individual developer Anthony Andongni (referred to as "the App", "we", or "us"). This Privacy Policy explains how the App handles user data.
+Lexicardio is provided by individual developer 安東尼Andongni (referred to as "the App", "we", or "us"). This Privacy Policy explains how the App handles user data.
 
 ## 1. Accounts and Personal Information
 

@@ -35,7 +35,7 @@ const renderedMarkdown = computed(() => marked(markdownRaw.value));
 
 const switchLanguage = async (targetLang: string) => {
   const projectName = normalizedProjectName.value;
-  if (!projectName || displayedLang.value === targetLang) {
+  if (!projectName || normalizedLang.value === targetLang) {
     return;
   }
 
