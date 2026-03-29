@@ -11,6 +11,7 @@ import wingwarYAML from "../../public/data/view-wingwar.yaml";
 import cubemixerYAML from "../../public/data/view-cubemixer.yaml";
 import tankwarYAML from "../../public/data/view-tankwar.yaml";
 import lexicardioYAML from "../../public/data/view-lexicardio.yaml";
+import snapledgerYAML from "../../public/data/view-snapledger.yaml";
 
 import projectCrossingYAML from "../../public/data/project-crossing.yaml";
 import LoadingPanel from "@/components/WebPage/Main/LoadingPanel.vue";
@@ -29,16 +30,17 @@ const wingwarData: MainPageYAML = wingwarYAML;
 const cubemixerData: MainPageYAML = cubemixerYAML;
 const tankwarData: MainPageYAML = tankwarYAML;
 const lexicardioData: MainPageYAML = lexicardioYAML;
+const snapledgerData: MainPageYAML = snapledgerYAML;
 </script>
 
 <template>
   <MainView/>
   <BigTitle title="PROJECT" style=""/>
   <div class="w-screen flex flex-col items-center">
-    <MainPageIntroProjectRight index="01" :title="lexicardioData.title" :img-src="lexicardioData.imgSrc" :intro="lexicardioData.intro" :link="lexicardioData.link" link-props="lexicardio/home"/>
-    <MainPageIntroProjectLeft index="02" :title="tankwarData.title" :img-src="tankwarData.imgSrc" :intro="tankwarData.intro" :link="tankwarData.link" link-props="tankwar/home"/>
-    <MainPageIntroProjectRight index="03" :title="crossingData.title" :img-src="crossingData.imgSrc" :intro="crossingData.intro" :link="crossingData.link" link-props="crossing/home"/>
-    <MainPageIntroProjectLeft index="04" :title="gunshootData.title" :img-src="gunshootData.imgSrc" :intro="gunshootData.intro" :link="gunshootData.link" link-props="gunshoot/home"/>
+    <MainPageIntroProjectRight index="01" :title="snapledgerData.title" :img-src="snapledgerData.imgSrc" :intro="snapledgerData.intro" :link="snapledgerData.link" link-props="snapledger/home"/>
+    <MainPageIntroProjectLeft index="02" :title="lexicardioData.title" :img-src="lexicardioData.imgSrc" :intro="lexicardioData.intro" :link="lexicardioData.link" link-props="lexicardio/home"/>
+    <MainPageIntroProjectRight index="03" :title="tankwarData.title" :img-src="tankwarData.imgSrc" :intro="tankwarData.intro" :link="tankwarData.link" link-props="tankwar/home"/>
+    <MainPageIntroProjectLeft index="04" :title="crossingData.title" :img-src="crossingData.imgSrc" :intro="crossingData.intro" :link="crossingData.link" link-props="crossing/home"/>
   </div>
 
   <More/>

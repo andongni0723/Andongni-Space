@@ -25,6 +25,19 @@ export const lexicardioData: ProjectData = {
     projectStudyImg: [],
 }
 
+export const snapledgerData: ProjectData = {
+    projectName: "Snapledger",
+    projectID: "snapledger",
+    projectGithubLink: "",
+    projectGitHubName: "",
+    description: "Snapledger is an AI-powered expense tracking application that helps users log their spending with just one sentence. Instead of filling in multiple fields manually, users can simply type what they spent, and the app will convert it into a clear financial record. Snapledger is designed for people who want a faster, simpler, and more intuitive way to manage daily expenses.",
+    type: "Application",
+    madeData: "",
+    readmePath: "",
+    projectImg: ["/main-page-img/snapledger.webp"],
+    projectStudyImg: [],
+}
+
 export const tankwarData: ProjectData = {
     projectName: "TankWar:Assault",
     projectID: "tankwar",
@@ -245,6 +258,7 @@ export const docardData: ProjectData = {
 }
 
 export const AllProject: ProjectData[] = [
+    snapledgerData,
     lexicardioData,
     tankwarData,
     cubemixerData,

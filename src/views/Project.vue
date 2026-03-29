@@ -8,7 +8,9 @@ import {
   cubemixerData,
   docardData,
   gunshootData,
-  ProjectData, tankwarData,
+  ProjectData,
+  snapledgerData,
+  tankwarData,
   wingwar
 } from "../../public/data/ProjectDataManager";
 import NewConvertMarkdown from "@/components/Markdown/NewConvertMarkdown.vue";
@@ -64,6 +66,10 @@ switch (props.dataID)
     router.push('/');
     break;
 
+  case "snapledger":
+    data = snapledgerData;
+    break;
+
   default:
     router.push('/404');
     //...
@@ -94,12 +100,14 @@ console.log(props);
       <h1 class="font-impact text-6xl sm:text-7xl text-white-main pt-[30px]">{{data.projectName}}</h1>
 
       <!-- Project Github Path ( icon and text ) -->
-      <div class="flex gap-10 items-center mt-[50px] mb-8">
+      <div v-if="data.projectGithubLink && data.projectGitHubName" class="flex gap-10 items-center mt-[50px] mb-8">
         <ResponsiveWatcher v-slot="rw">
           <div v-if="rw.width >= 600">
-            <i class="fa-brands fa-github fa-2xl text-white"></i></div>
+            <font-awesome-icon :icon="['fab', 'github']" class="text-white text-2xl" />
+          </div>
           <div v-else>
-            <i class="fa-brands fa-github fa-xl text-white"></i></div>
+            <font-awesome-icon :icon="['fab', 'github']" class="text-white text-xl" />
+          </div>
         </ResponsiveWatcher>
         <a class="font-jetbrains text-white-main text-sm sm:text-2xl under" :href="data.projectGithubLink" target="_blank" rel="noopener noreferrer">
           andongni0723/{{data.projectGitHubName}}</a>
@@ -138,17 +146,17 @@ console.log(props);
   </ResponsiveWatcher>
 
   <!-- Project Github Readme (markdown) -->
-  <NewConvertMarkdown :markdown-path="data.readmePath"/>
+  <NewConvertMarkdown v-if="data.readmePath" :markdown-path="data.readmePath"/>
 
   <!-- Game Photo-->
-  <div class="flex sm:grid sm: grid-cols-2 flex-col justify-center items-center mb-[50px] p-[5%] ">
+  <div v-if="data.projectImg.length > 0" class="flex sm:grid sm: grid-cols-2 flex-col justify-center items-center mb-[50px] p-[5%] ">
     <img v-for="(path, index) in data.projectImg" class="w-[90%] h-auto m-[4%] rounded-lg sm:rounded-3xl" :src="path" :key="index" alt="" >
   </div>
 
-  <BigTitle title="Learning Process"/>
+  <BigTitle v-if="data.projectStudyImg.length > 0" title="Learning Process"/>
 
   <!-- Learning Process Photo -->
-  <div class="flex flex-col sm:p-[2%] p-[5%]">
+  <div v-if="data.projectStudyImg.length > 0" class="flex flex-col sm:p-[2%] p-[5%]">
     <img v-for="(path, index) in data.projectStudyImg" class="w-[90%] h-auto m-[4%] sm:rounded-3xl rounded-lg" :src="path" :key="index" alt="" >
   </div>
 
